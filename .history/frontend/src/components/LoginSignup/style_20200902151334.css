@@ -17,20 +17,19 @@
 
 .form {
   margin-top: 1.5em;
-  flex-direction: column;
+  flex-direction: row;
+justify-Content: space-between
   align-items: flex-start;
 }
 
-input[type="text"],
-select {
-  padding: 2px;
-  margin: 3px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.from-group {
+  border-block: 20px;
 }
 
-select {
-  width: 48%;
+input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 label {

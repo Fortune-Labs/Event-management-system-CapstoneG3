@@ -18,19 +18,14 @@
 .form {
   margin-top: 1.5em;
   flex-direction: column;
+  padding: 20px;
   align-items: flex-start;
 }
 
-input[type="text"],
-select {
-  padding: 2px;
-  margin: 3px;
+input[type="text"] {
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-}
-
-select {
-  width: 48%;
 }
 
 label {

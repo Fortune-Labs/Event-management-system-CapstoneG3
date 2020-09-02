@@ -22,17 +22,14 @@ export default class Register extends React.Component {
                 <br></br>
                 <input type="text" name="cpwd" placeholder="Confirm Password" />
                 <input type="text" name="address" placeholder="Address" />{" "}
-                <br />
-                <input type="text" name="phone" placeholder="Phone" />
-                <select id="city" name="city" placeholder="Phone">
-                  <option value="" disabled selected hidden>
-                    Choose city
-                  </option>
-                  <option value="acc">Accra</option>
-                  <option value="tma">Tamale</option>
-                  <option value="ksi">Kumasi</option>
-                </select>{" "}
                 <br></br>
+                <input type="text" name="phone" placeholder="Phone" />
+                <select id="country" name="country">
+                  <option value="australia">Australia</option>
+                  <option value="canada">Canada</option>
+                  <option value="usa">USA</option>
+                </select>
+                <input type="text" name="city" placeholder="City" /> <br></br>
                 <label>
                   <input name="agreement" type="checkbox" />I agree with the
                   term and conditions

@@ -29,10 +29,6 @@ select {
   border-radius: 4px;
 }
 
-select {
-  width: 48%;
-}
-
 label {
   padding: 12px 12px 12px 0;
   display: flex;

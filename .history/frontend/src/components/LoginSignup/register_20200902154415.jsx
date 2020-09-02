@@ -25,7 +25,7 @@ export default class Register extends React.Component {
                 <br />
                 <input type="text" name="phone" placeholder="Phone" />
                 <select id="city" name="city" placeholder="Phone">
-                  <option value="" disabled selected hidden>
+                  <option disabled selected hidden>
                     Choose city
                   </option>
                   <option value="acc">Accra</option>

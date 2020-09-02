@@ -21,28 +21,17 @@
   align-items: flex-start;
 }
 
-input[type="text"],
-select {
-  padding: 2px;
-  margin: 3px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.from-group {
+  border-block: 20px;
 }
 
-select {
-  width: 48%;
+input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 label {
   padding: 12px 12px 12px 0;
   display: flex;
-}
-
-.btn {
-  background-color: #414aa1;
-  color: white;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }

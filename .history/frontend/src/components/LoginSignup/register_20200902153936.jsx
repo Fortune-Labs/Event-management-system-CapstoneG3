@@ -22,7 +22,7 @@ export default class Register extends React.Component {
                 <br></br>
                 <input type="text" name="cpwd" placeholder="Confirm Password" />
                 <input type="text" name="address" placeholder="Address" />{" "}
-                <br />
+                <br></br>
                 <input type="text" name="phone" placeholder="Phone" />
                 <select id="city" name="city" placeholder="Phone">
                   <option value="" disabled selected hidden>
