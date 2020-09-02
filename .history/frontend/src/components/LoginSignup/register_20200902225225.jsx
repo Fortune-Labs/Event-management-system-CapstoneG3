@@ -55,7 +55,7 @@ export default class Register extends React.Component {
                   <input type="text" name="address" placeholder="Address" />
                 </div>
                 <div>
-                  <label htmlFor="phone">phone</label>
+                  <label htmlFor="phone">First Name</label>
                   <input type="phone" name="phone" placeholder="" />
                 </div>
                 <div>
@@ -80,7 +80,7 @@ export default class Register extends React.Component {
                 </div>
               </form>
               <footer>
-                <p>Capstone Algorithm</p>
+                <p>dfdfdfdfdfd</p>
               </footer>
             </div>
           </div>

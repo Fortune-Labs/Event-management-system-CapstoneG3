@@ -19,50 +19,42 @@ export default class Register extends React.Component {
                   <input
                     type="text"
                     name="firstName"
-                    placeholder="Enter First Name"
+                    placeholder="First Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName">Last Name</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    placeholder="Enter Last name"
-                  />
+                  <label htmlFor="lastName">First Name</label>
+                  <input type="text" name="email" placeholder="Email" />
                 </div>
                 <div>
-                  <label htmlFor="email">Email</label>
-                  <input type="text" name="email" placeholder="Enter Email" />
+                  <label htmlFor="firstName">First Name</label>
+                  <input type="password" name="pwd" placeholder="Password" />
                 </div>
                 <div>
-                  <label htmlFor="password">Password</label>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                  />
+                  <label htmlFor="firstName">First Name</label>
+                  <input type="password" name="pwd" placeholder="Password" />
                 </div>
                 <div>
-                  <label htmlFor="cpassword">Confirm Password</label>
+                  <label htmlFor="firstName">First Name</label>
                   <input
                     type="password"
-                    name="cpassword"
+                    name="cpwd"
                     placeholder="Confirm Password"
                   />
                 </div>
                 <div>
-                  <label htmlFor="address">Address</label>
+                  <label htmlFor="firstName">First Name</label>
                   <input type="text" name="address" placeholder="Address" />
                 </div>
                 <div>
-                  <label htmlFor="phone">phone</label>
-                  <input type="phone" name="phone" placeholder="" />
+                  <label htmlFor="firstName">First Name</label>
+                  <input type="text" name="phone" placeholder="Phone" />
                 </div>
                 <div>
-                  <label htmlFor="city">Choose City</label>
-                  <select id="city" name="city">
+                  <label htmlFor="firstName">First Name</label>
+                  <select id="city" name="city" placeholder="Phone">
                     <option value="" disabled selected hidden>
-                      city
+                      Choose city
                     </option>
                     <option value="acc">Accra</option>
                     <option value="tma">Tamale</option>
@@ -80,7 +72,7 @@ export default class Register extends React.Component {
                 </div>
               </form>
               <footer>
-                <p>Capstone Algorithm</p>
+                <p>dfdfdfdfdfd</p>
               </footer>
             </div>
           </div>

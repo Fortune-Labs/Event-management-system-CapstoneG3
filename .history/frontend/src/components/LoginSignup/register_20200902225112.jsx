@@ -55,14 +55,14 @@ export default class Register extends React.Component {
                   <input type="text" name="address" placeholder="Address" />
                 </div>
                 <div>
-                  <label htmlFor="phone">phone</label>
+                  <label htmlFor="phone">First Name</label>
                   <input type="phone" name="phone" placeholder="" />
                 </div>
                 <div>
-                  <label htmlFor="city">Choose City</label>
-                  <select id="city" name="city">
+                  <label htmlFor="firstName">First Name</label>
+                  <select id="city" name="city" placeholder="Phone">
                     <option value="" disabled selected hidden>
-                      city
+                      Choose city
                     </option>
                     <option value="acc">Accra</option>
                     <option value="tma">Tamale</option>
@@ -80,7 +80,7 @@ export default class Register extends React.Component {
                 </div>
               </form>
               <footer>
-                <p>Capstone Algorithm</p>
+                <p>dfdfdfdfdfd</p>
               </footer>
             </div>
           </div>

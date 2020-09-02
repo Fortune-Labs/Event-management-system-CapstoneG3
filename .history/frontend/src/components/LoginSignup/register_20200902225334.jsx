@@ -80,7 +80,7 @@ export default class Register extends React.Component {
                 </div>
               </form>
               <footer>
-                <p>Capstone Algorithm</p>
+                <p>dfdfdfdfdfd</p>
               </footer>
             </div>
           </div>
