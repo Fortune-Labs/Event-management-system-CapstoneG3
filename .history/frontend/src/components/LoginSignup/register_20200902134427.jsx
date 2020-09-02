@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 export default class Register extends React.Component {
   constructor(props) {
@@ -29,14 +28,9 @@ export default class Register extends React.Component {
                   <input name="agreement" type="checkbox" />I agree with the
                   term and conditions
                 </label>{" "}
-                <br />
-                <button type="button" className="btn">
-                  Create Account
-                </button>
+                <br></br>
+                <button>Create Account</button>
               </form>
-              <footer>
-                <p>dfdfdfdfdfd</p>
-              </footer>
             </div>
           </div>
         </div>

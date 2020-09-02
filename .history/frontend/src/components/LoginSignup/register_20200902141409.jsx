@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 export default class Register extends React.Component {
   constructor(props) {
@@ -34,9 +33,7 @@ export default class Register extends React.Component {
                   Create Account
                 </button>
               </form>
-              <footer>
-                <p>dfdfdfdfdfd</p>
-              </footer>
+              <p></p>
             </div>
           </div>
         </div>
