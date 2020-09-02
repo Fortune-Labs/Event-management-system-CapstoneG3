@@ -19,7 +19,6 @@ export default class Register extends React.Component {
                 name="firstName"
                 placeholder="Enter First Name"
                 noValidate
-                onChange={this.handleChange}
               />
             </div>
             <div className="lastName">
@@ -29,27 +28,15 @@ export default class Register extends React.Component {
                 name="lastName"
                 placeholder="Enter Last name"
                 noValidate
-                onChange={this.handleChange}
               />
             </div>
             <div className="email">
               <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                name="email"
-                placeholder="Enter Email"
-                noValidate
-              />
+              <input type="text" name="email" placeholder="Enter Email" />
             </div>
-            <div className="password">
+            <div>
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                noValidate
-                onChange={this.handleChange}
-              />
+              <input type="password" name="password" placeholder="Password" />
             </div>
             <div>
               <label htmlFor="cpassword">Confirm Password</label>

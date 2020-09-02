@@ -8,48 +8,33 @@ export default class Register extends React.Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div className="base-container">
         <div className="form-wrapper">
           <h1>Registration</h1>
           <form onSubmit={this.handleSubmit} noValidate>
-            <div className="firstName">
+            <div>
               <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 name="firstName"
                 placeholder="Enter First Name"
-                noValidate
-                onChange={this.handleChange}
               />
             </div>
-            <div className="lastName">
+            <div>
               <label htmlFor="lastName">Last Name</label>
               <input
                 type="text"
                 name="lastName"
                 placeholder="Enter Last name"
-                noValidate
-                onChange={this.handleChange}
               />
             </div>
-            <div className="email">
+            <div>
               <label htmlFor="email">Email</label>
-              <input
-                type="text"
-                name="email"
-                placeholder="Enter Email"
-                noValidate
-              />
+              <input type="text" name="email" placeholder="Enter Email" />
             </div>
-            <div className="password">
+            <div>
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                noValidate
-                onChange={this.handleChange}
-              />
+              <input type="password" name="password" placeholder="Password" />
             </div>
             <div>
               <label htmlFor="cpassword">Confirm Password</label>
