@@ -21,8 +21,6 @@ export default class Register extends React.Component {
               <input type="text" name="cpwd" placeholder="Confirm Password" />
               <input type="text" name="address" placeholder="Address" />{" "}
               <br></br>
-              <input type="text" name="phone" placeholder="Phone" />
-              <input type="text" name="city" placeholder="City" /> <br></br>
             </div>
           </div>
         </div>
