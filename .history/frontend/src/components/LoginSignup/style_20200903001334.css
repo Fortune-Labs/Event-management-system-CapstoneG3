@@ -9,8 +9,7 @@
 }
 
 .form-wrapper {
-  width: 300px;
-  height: 200px;
+  width: 400vh;
   display: flex;
   flex-direction: column;
   padding: 20px 40px;
