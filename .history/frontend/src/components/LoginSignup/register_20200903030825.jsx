@@ -100,9 +100,7 @@ export default class Register extends React.Component {
           <h1>Registration</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
-              <label htmlFor="firstName" className="Kelvin">
-                First Name
-              </label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 name="firstName"

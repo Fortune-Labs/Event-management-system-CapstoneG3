@@ -100,9 +100,7 @@ export default class Register extends React.Component {
           <h1>Registration</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
-              <label htmlFor="firstName" className="Kelvin">
-                First Name
-              </label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 name="firstName"
@@ -153,8 +151,8 @@ export default class Register extends React.Component {
                 <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
-            <div className="password">
-              <label htmlFor="password">Confirm Password</label>
+            <div className="cpassword">
+              <label htmlFor="cpassword">Confirm Password</label>
               <input
                 type="password"
                 name="cpassword"

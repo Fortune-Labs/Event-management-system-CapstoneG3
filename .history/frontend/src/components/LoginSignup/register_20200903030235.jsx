@@ -100,9 +100,7 @@ export default class Register extends React.Component {
           <h1>Registration</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="firstName">
-              <label htmlFor="firstName" className="Kelvin">
-                First Name
-              </label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 name="firstName"
@@ -152,65 +150,6 @@ export default class Register extends React.Component {
               {formErrors.password.length > 0 && (
                 <span className="errorMessage">{formErrors.password}</span>
               )}
-            </div>
-            <div className="password">
-              <label htmlFor="password">Confirm Password</label>
-              <input
-                type="password"
-                name="cpassword"
-                placeholder="Confirm Password"
-                noValidate
-                onChange={this.handleChange}
-              />
-              {formErrors.cpassword.length > 0 && (
-                <span className="errorMessage">{formErrors.cpassword}</span>
-              )}
-            </div>
-
-            <div className="address">
-              <label htmlFor="address">Address</label>
-              <input
-                type="text"
-                name="address"
-                placeholder="Address"
-                noValidate
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div className="phone">
-              <label htmlFor="phone">phone</label>
-              <input
-                type="phone"
-                name="phone"
-                placeholder=""
-                noValidate
-                onChange={this.handleChange}
-              />
-            </div>
-
-            <div className="city">
-              <label htmlFor="city">Choose City</label>
-              <select
-                id="city"
-                name="city"
-                noValidate
-                onChange={this.handleChange}
-              >
-                <option value="" disabled selected hidden>
-                  city
-                </option>
-                <option value="acc">Accra</option>
-                <option value="tma">Tamale</option>
-                <option value="ksi">Kumasi</option>
-              </select>
-            </div>
-
-            <div className="register action-counter">
-              <button onClick={this.register} type="submit" className="btn">
-                Create Account
-              </button>
-              <small>Already Have an Account?</small>
             </div>
           </form>
         </div>
