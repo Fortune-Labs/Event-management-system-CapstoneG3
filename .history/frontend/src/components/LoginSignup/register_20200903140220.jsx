@@ -171,17 +171,19 @@ export default class Register extends React.Component {
             </div>
 
             <div className="phone">
+              <label htmlFor="phone">phone</label>
               <input
                 type="tel"
                 name="phone"
-                placeholder="Phone:012-345-6789"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="Enter Pho"
+                            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}
                 noValidate
                 onChange={this.handleChange}
               />
             </div>
 
             <div className="city">
+              <label htmlFor="city">Choose City</label>
               <select
                 id="city"
                 name="city"
@@ -189,7 +191,7 @@ export default class Register extends React.Component {
                 onChange={this.handleChange}
               >
                 <option value="" disabled selected hidden>
-                  Choose a city
+                  city
                 </option>
                 <option value="acc">Accra</option>
                 <option value="tma">Tamale</option>

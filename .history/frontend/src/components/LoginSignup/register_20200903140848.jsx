@@ -200,7 +200,8 @@ export default class Register extends React.Component {
             <div className="register action-counter">
               <button onClick={this.register} type="submit" className="btn">
                 Create Account
-              </button>
+              </button>{" "}
+              <br></br>
               <small>Already Have an Account?</small>
             </div>
           </form>

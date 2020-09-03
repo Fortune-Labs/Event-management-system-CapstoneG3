@@ -189,7 +189,7 @@ export default class Register extends React.Component {
                 onChange={this.handleChange}
               >
                 <option value="" disabled selected hidden>
-                  Choose a city
+                  city
                 </option>
                 <option value="acc">Accra</option>
                 <option value="tma">Tamale</option>
