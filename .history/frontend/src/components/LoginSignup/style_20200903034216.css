@@ -138,26 +138,6 @@ input.error {
   font-weight: lighter;
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .form-wrapper {
-    margin-top: 70%;
-    padding: 10px 10px 10px 10px;
-  }
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .form-wrapper {
-    padding: 10px 10px 10px 10px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .form-wrapper {
-    margin-top: 50%;
-    padding: 10px 10px 10px 10px;
-  }
-}
 @media only screen and (max-width: 600px) {
   .form-wrapper {
     margin-top: 50%;
@@ -165,10 +145,9 @@ input.error {
   }
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 200px) {
   .form-wrapper {
-    margin-top: 90%;
+    margin-top: 50%;
     padding: 10px 10px 10px 10px;
   }
 }
