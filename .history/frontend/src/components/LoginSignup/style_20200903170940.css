@@ -1,32 +1,38 @@
+body {
+  /* overflow: hidden; */
+  margin: 0;
+}
 .wrapper {
-  height: 100vh;
+  height: 100;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
-
-  margin: 0;
+  /* margin-top: -30px; */
+  /* margin: 0; */
 }
 
 .form-wrapper {
   height: 100%;
   width: 50%;
+
+  /* width: 300px; */
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 20px 40px;
+  /* padding: 10px 10px 10px 10px; */
   border-radius: 10px;
   box-shadow: 0px 10px 50px #555;
   background-color: #ffffff;
 }
 
 form {
+  /*  margin: 0; */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 
 h1 {
@@ -34,7 +40,7 @@ h1 {
   width: 100%;
   color: #111;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: lighter;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -44,11 +50,17 @@ label {
   margin-bottom: 0.09em;
   color: #222;
   font-weight: lighter;
+  /*  margin-top: -15px; */
 }
+
+/* .Kelvin { */
+/* margin-top: -20px; */
+/* } */
 
 input[type="text"],
 select {
   padding: 10px 10px;
+  /*  padding: 2px; */
   border-radius: 5px;
   outline: none;
   border: 1px solid #cfcfcf;
@@ -56,6 +68,7 @@ select {
 }
 input[type="password"] {
   padding: 10px 10px;
+
   border-radius: 5px;
   outline: none;
   border: 1px solid #cfcfcf;
@@ -118,11 +131,15 @@ input.error {
 .password,
 .cpassword,
 .address,
-.phone,
-.city {
+.phone {
   width: 49%;
 }
 
+select {
+  width: 170%;
+  height: 100%;
+  font-size: 0.6em;
+}
 .register {
   width: 100%;
   display: flex;
@@ -138,7 +155,7 @@ input.error {
   width: 50%;
   margin-top: 1em;
   padding: 8px 0px;
-  font-size: 0.5em;
+  font-size: 1em;
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
@@ -153,4 +170,39 @@ input.error {
 .register small {
   color: #999;
   font-weight: lighter;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .form-wrapper {
+    margin-top: 70%;
+    padding: 10px 10px 10px 10px;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .form-wrapper {
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .form-wrapper {
+    margin-top: 50%;
+    padding: 10px 10px 10px 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form-wrapper {
+    margin-top: 50%;
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .form-wrapper {
+    margin-top: 90%;
+    padding: 10px 10px 10px 10px;
+  }
 }
