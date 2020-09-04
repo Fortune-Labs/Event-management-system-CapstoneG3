@@ -158,10 +158,11 @@ input.error {
 a:link,
 a:visited {
   color: #2c43a8;
-  font-weight: 300;
 }
 
 a:hover,
 a:active {
   color: #519e8a;
+  background-color: #fff;
+  border: 2px solid #519e8a;
 }

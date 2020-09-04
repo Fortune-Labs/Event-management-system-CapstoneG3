@@ -152,13 +152,12 @@ input.error {
 
 .register small {
   color: #999;
-  font-weight: lighter;
 }
 
 a:link,
 a:visited {
   color: #2c43a8;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 a:hover,

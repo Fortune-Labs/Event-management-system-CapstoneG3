@@ -91,15 +91,15 @@ export default class Register extends React.Component {
         break;
 
       case "password":
-        formErrors.password;
-        value.length < 6 ? "minimum 6 characaters required" : "";
+        formErrors.password =
+          value.length < 6 ? "minimum 6 characaters required" : "";
         break;
 
       //my
-      case "cpassword":
+      /*  case "cpassword":
         formErrors.cpassword =
           cpassword.value != password.value ? "password mismatch" : "";
-        break;
+        break; */
 
       case "phone":
         formErrors.phone = phoneRegex.test(value) ? "" : "invalid phone number";
@@ -197,9 +197,6 @@ export default class Register extends React.Component {
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.address.length > 0 && (
-                <span className="errorMessage">{formErrors.address}</span>
-              )}
             </div>
 
             <div className="phone">
@@ -211,9 +208,6 @@ export default class Register extends React.Component {
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.phone.length > 0 && (
-                <span className="errorMessage">{formErrors.phone}</span>
-              )}
             </div>
 
             <div className="city">
@@ -230,9 +224,6 @@ export default class Register extends React.Component {
                 <option value="tma">Tamale</option>
                 <option value="ksi">Kumasi</option>
               </select>
-              {formErrors.city.length > 0 && (
-                <span className="errorMessage">{formErrors.city}</span>
-              )}
             </div>
 
             <div className="register action-counter">

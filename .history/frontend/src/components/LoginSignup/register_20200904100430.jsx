@@ -91,15 +91,15 @@ export default class Register extends React.Component {
         break;
 
       case "password":
-        formErrors.password;
-        value.length < 6 ? "minimum 6 characaters required" : "";
+        formErrors.password =
+          value.length < 6 ? "minimum 6 characaters required" : "";
         break;
 
       //my
-      case "cpassword":
+      /*  case "cpassword":
         formErrors.cpassword =
           cpassword.value != password.value ? "password mismatch" : "";
-        break;
+        break; */
 
       case "phone":
         formErrors.phone = phoneRegex.test(value) ? "" : "invalid phone number";

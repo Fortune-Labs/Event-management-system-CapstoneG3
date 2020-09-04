@@ -58,11 +58,6 @@ export default class Register extends React.Component {
         Last Name: ${this.state.lastName}
         Email: ${this.state.email}
         Password: ${this.state.password}
-        cpassword: ${this.state.cpassword}
-        phone: ${this.state.phone}
-        address: ${this.state.address}
-        city: ${this.state.city}
-
       `);
     } else {
       console.error("FORM INVALID - DISPLAY ERROR MESSAGE");
@@ -91,8 +86,8 @@ export default class Register extends React.Component {
         break;
 
       case "password":
-        formErrors.password;
-        value.length < 6 ? "minimum 6 characaters required" : "";
+        formErrors.password =
+          value.length < 6 ? "minimum 6 characaters required" : "";
         break;
 
       //my
@@ -102,18 +97,18 @@ export default class Register extends React.Component {
         break;
 
       case "phone":
-        formErrors.phone = phoneRegex.test(value) ? "" : "invalid phone number";
-        break;
+        formErrors.phone =
+          value.length < 6 ? "minimum 6 characaters required" : "";
 
       case "address":
-        formErrors.address = value.length < 2 ? "enter address properly" : "";
+        formErrors.email = emailRegex.test(value)
+          ? ""
+          : "invalid email address";
         break;
-
       case "city":
-        formErrors.city =
+        formErrors.password =
           value.length < 6 ? "minimum 6 characaters required" : "";
         break;
-
       default:
         break;
     }
@@ -197,9 +192,6 @@ export default class Register extends React.Component {
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.address.length > 0 && (
-                <span className="errorMessage">{formErrors.address}</span>
-              )}
             </div>
 
             <div className="phone">
@@ -211,9 +203,6 @@ export default class Register extends React.Component {
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.phone.length > 0 && (
-                <span className="errorMessage">{formErrors.phone}</span>
-              )}
             </div>
 
             <div className="city">
@@ -230,9 +219,6 @@ export default class Register extends React.Component {
                 <option value="tma">Tamale</option>
                 <option value="ksi">Kumasi</option>
               </select>
-              {formErrors.city.length > 0 && (
-                <span className="errorMessage">{formErrors.city}</span>
-              )}
             </div>
 
             <div className="register action-counter">
