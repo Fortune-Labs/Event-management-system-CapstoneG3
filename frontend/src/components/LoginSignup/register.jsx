@@ -133,13 +133,13 @@ export default class Register extends React.Component {
     return (
       <div className="wrapper">
         {" "}
-        //Container for account creating
+<!--         Container for account creating -->
         <div className="form-wrapper">
           {" "}
-          // form container
+<!--           form container -->
           <form onSubmit={this.handleSubmit} noValidate>
             <h1>Registration</h1>
-            //First NAme
+<!--             First Name -->
             <div className="firstName">
               <input
                 type="text"
@@ -152,7 +152,7 @@ export default class Register extends React.Component {
                 <span className="errorMessage">{formErrors.firstName}</span>
               )}
             </div>
-            //Last Name
+<!--             Last Name -->
             <div className="lastName">
               <input
                 type="text"
@@ -165,7 +165,7 @@ export default class Register extends React.Component {
                 <span className="errorMessage">{formErrors.lastName}</span>
               )}
             </div>
-            //Email
+<!--             Email -->
             <div className="email">
               <input
                 type="text"
