@@ -74,9 +74,9 @@ export default class Register extends React.Component {
     const { name, value } = e.target;
     let formErrors = { ...this.state.formErrors };
 
-    /*    console.log("Name", name);
+    console.log("Name", name);
     console.log("Value", value);
- */
+
     switch (name) {
       case "firstName":
         formErrors.firstName =

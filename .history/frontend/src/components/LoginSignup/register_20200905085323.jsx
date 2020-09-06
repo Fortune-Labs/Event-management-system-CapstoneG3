@@ -74,9 +74,9 @@ export default class Register extends React.Component {
     const { name, value } = e.target;
     let formErrors = { ...this.state.formErrors };
 
-    /*    console.log("Name", name);
+    console.log("Name", name);
     console.log("Value", value);
- */
+
     switch (name) {
       case "firstName":
         formErrors.firstName =
@@ -99,18 +99,18 @@ export default class Register extends React.Component {
         break;
 
       //my
-      /*  case "cpassword":
-        formErrors.cpassword = value;
-        formErrors.password = value;
-        formErrors.cpassword = formErrors.password ? "" : "password mismatch";
+      case "cpassword":
+        formErrors.cpassword = formErrors.password.value
+          ? ""
+          : "password mismatch";
         break;
- */
+
       case "phone":
         formErrors.phone = phoneRegex.test(value) ? "" : "invalid phone number";
         break;
 
       case "address":
-        formErrors.address = value.length < 15 ? "enter address properly" : "";
+        formErrors.address = value.length < 2 ? "enter address properly" : "";
         break;
 
       case "city":
@@ -186,7 +186,7 @@ export default class Register extends React.Component {
                 type="password"
                 name="cpassword"
                 placeholder="Confirm Password"
-                autocomplete="cpassword"
+                autocomplete="password"
                 noValidate
                 onChange={this.handleChange}
               />

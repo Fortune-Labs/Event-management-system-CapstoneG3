@@ -74,9 +74,9 @@ export default class Register extends React.Component {
     const { name, value } = e.target;
     let formErrors = { ...this.state.formErrors };
 
-    /*    console.log("Name", name);
+    console.log("Name", name);
     console.log("Value", value);
- */
+
     switch (name) {
       case "firstName":
         formErrors.firstName =
@@ -99,12 +99,12 @@ export default class Register extends React.Component {
         break;
 
       //my
-      /*  case "cpassword":
+      case "cpassword":
         formErrors.cpassword = value;
         formErrors.password = value;
         formErrors.cpassword = formErrors.password ? "" : "password mismatch";
         break;
- */
+
       case "phone":
         formErrors.phone = phoneRegex.test(value) ? "" : "invalid phone number";
         break;
