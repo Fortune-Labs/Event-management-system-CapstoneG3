@@ -9,7 +9,6 @@ const emailRegex = RegExp(
 //Regular expression that holds phone number validation of form (000-000-0000)
 const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 
-//Validate both empty and filled out form errors
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
 
@@ -25,8 +24,6 @@ const formValid = ({ formErrors, ...rest }) => {
 
   return valid;
 };
-
-//Components register
 export default class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +53,7 @@ export default class Register extends React.Component {
     e.preventDefault();
 
     if (formValid(this.state)) {
-      //Edit here to handle backed stuff
+      //bellow hello we submit form to backend
       console.log(`
         --SUBMITTING--
         First Name: ${this.state.firstName}
