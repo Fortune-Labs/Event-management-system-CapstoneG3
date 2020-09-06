@@ -79,7 +79,9 @@ export default class Register extends React.Component {
     const { name, value } = e.target;
     let formErrors = { ...this.state.formErrors };
 
-    //Decision for error handling and validatio in all inputs
+    /*    console.log("Name", name);
+    console.log("Value", value);
+ */
     switch (name) {
       case "firstName":
         formErrors.firstName =
@@ -101,7 +103,7 @@ export default class Register extends React.Component {
           value.length < 8 ? "minimum 8 characaters required" : "";
         break;
 
-      // Thinng about the logic to write for comform password...  think React has some libraries though.
+      //my
       /*  case "cpassword":
         formErrors.cpassword = value;
         formErrors.password = value;
@@ -133,13 +135,13 @@ export default class Register extends React.Component {
     return (
       <div className="wrapper">
         {" "}
-        {/* Container for account creating  */}
+        //Container for account creating
         <div className="form-wrapper">
           {" "}
-          {/*    form container  */}
+          // form container
           <form onSubmit={this.handleSubmit} noValidate>
             <h1>Registration</h1>
-            {/* First Name  */}
+            //First NAme
             <div className="firstName">
               <input
                 type="text"
@@ -152,7 +154,7 @@ export default class Register extends React.Component {
                 <span className="errorMessage">{formErrors.firstName}</span>
               )}
             </div>
-            {/* Last Name  */}
+            //Last Name
             <div className="lastName">
               <input
                 type="text"
@@ -165,7 +167,7 @@ export default class Register extends React.Component {
                 <span className="errorMessage">{formErrors.lastName}</span>
               )}
             </div>
-            {/* Email  */}
+            //Email
             <div className="email">
               <input
                 type="text"
