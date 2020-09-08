@@ -10,17 +10,24 @@ from rest_framework.exceptions import AuthenticationFailed
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    password = serializers.CharField(
-        max_length=68, min_length=6, write_only=True)
+    confirm_password = serializers.CharField(
+        style={'input_type': 'password'}, write_only=True)
 
     class Meta:
         model = Account
         fields = ['email', 'username', 'first_name',
-                  'last_name', 'address', 'phone', 'city', 'password']
+                  'last_name', 'address', 'phone', 'city', 'password', 'confirm_password']
+        extra_kwargs = {'password': {'write_only': True}}
 
     def validate(self, attrs):
         email = attrs.get('email', '')
         username = attrs.get('username', '')
+        password = attrs.get('password', '')
+        confirm_password = attrs.get('confirm_password', '')
+
+        if password != confirm_password:
+            raise serializers.ValidationError(
+                {'password': 'Password must match.'})
 
         if not username.isalnum():
             raise serializers.ValidationError(
@@ -29,7 +36,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return Account.objects.create_user(**validated_data)
-
 
 class LoginSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(max_length=200, min_length=5)
