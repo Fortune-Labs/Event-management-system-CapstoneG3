@@ -31,10 +31,10 @@ class CustomUserManager(BaseUserManager):
             raise ValueError(_('The City must be set'))
 
         user = self.model(
-            email=self.normalize_email(email),
-            username=username,
             first_name=first_name,
             last_name=last_name,
+            email=self.normalize_email(email),
+            username=username,
             address=address,
             phone=phone,
             city=city,
