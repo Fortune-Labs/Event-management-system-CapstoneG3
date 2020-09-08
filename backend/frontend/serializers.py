@@ -32,11 +32,11 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(max_length=255, min_length=3)
+    email = serializers.EmailField(max_length=200, min_length=5)
     password = serializers.CharField(
-        max_length=68, min_length=6, write_only=True)
+        max_length=68, min_length=5, write_only=True)
     username = serializers.CharField(
-        max_length=255, min_length=3, read_only=True)
+        max_length=200, min_length=3, read_only=True)
     tokens = serializers.CharField(max_length=68, min_length=6, read_only=True)
 
     class Meta:
