@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
 import Register from "./components/LoginSignup/register";
-import Login from "./components/LoginSignup/login";
-import passwordReset from "./components/LoginSignup/passwordReset";
+import Login from "./components/LoginSignup//Login.jsx";
+import passwordReset from "./components/LoginSignup/passwordReset.jsx";
 import { BrowserRouter, Route } from "react-router-dom";
 
 function App() {
