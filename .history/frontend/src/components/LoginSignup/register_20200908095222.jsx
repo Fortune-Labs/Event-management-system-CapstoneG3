@@ -15,7 +15,7 @@ const UseFormFuction = () => {
   const password = useRef({});
   password.current = watch("password", "");
   const onSubmit = async (formData) => {
-    alert.log(formData);
+    console.log(formData);
     /*  let url = "";
     fetch(url, {
       method: "POST",
