@@ -16,7 +16,6 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const onSubmit = async (formData) => {
     console.log(formData);
-
     let url = "http://127.0.0.1:8000/auth/register/";
     fetch(url, {
       method: "POST",
@@ -31,7 +30,7 @@ const UseFormFuction = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-      });
+      }); */
   };
 
   return (
