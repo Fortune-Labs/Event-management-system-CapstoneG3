@@ -16,7 +16,7 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const onSubmit = async (formData) => {
     console.log(formData);
-    let url = "http://127.0.0.1:8000/auth/register/";
+    let url = "http://127.0.0.1:8000/";
     fetch(url, {
       method: "POST",
       headers: {
@@ -118,7 +118,7 @@ const UseFormFuction = () => {
             <ErrorMessage error={errors.phone} />
           </div>
 
-          {/*  <div className="city">
+          <div className="city">
             <select id="city" name="city" defaultValue="..">
               <option value="..." disabled selected hidden>
                 Choose a city
@@ -135,7 +135,7 @@ const UseFormFuction = () => {
               <option value="Wa">Wa</option>
               <option value="Bolgatanga">Bolgatanga</option>
             </select>
-          </div> */}
+          </div>
 
           {/* <ErrorMessage error={errors.city} />  */}
           <div className="register action-counter">
