@@ -4,11 +4,6 @@ from .models import Account
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
 
-# from django.contrib.auth.tokens import PasswordResetTokenGenerator
-# from django.utils.encoding import smart_str, force_str, smart_bytes, DjangoUnicodeDecodeError
-# from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-
-
 class RegisterSerializer(serializers.ModelSerializer):
     confirm_password = serializers.CharField(
         style={'input_type': 'password'}, write_only=True)
