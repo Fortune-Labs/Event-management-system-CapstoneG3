@@ -94,7 +94,7 @@ const UseFormFuction = () => {
             />
             <ErrorMessage error={errors.cpassword} />
           </div>
-          <div className="username">
+          <div className="useraname">
             <input
               type="text"
               name="username"
