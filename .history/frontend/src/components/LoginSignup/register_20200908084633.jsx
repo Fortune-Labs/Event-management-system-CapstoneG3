@@ -16,7 +16,7 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const onSubmit = async (formData) => {
     console.log(formData);
-    let url = "";
+   /*  let url = "";
     fetch(url, {
       method: "POST",
       headers: {
@@ -31,7 +31,7 @@ const UseFormFuction = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  };
+  }; */
 
   return (
     <div className="wrapper">
