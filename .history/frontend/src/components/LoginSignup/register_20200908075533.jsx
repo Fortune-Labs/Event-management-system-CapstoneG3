@@ -30,7 +30,7 @@ const UseFormFuction = () => {
       })
       .catch((error) => {
         console.error("Error:", error);
-      }); */
+      });
   };
 
   return (
@@ -143,7 +143,7 @@ const UseFormFuction = () => {
               Create Account
             </button>
             <small>
-              Already Have an Account? <a href="./login.jsx">Login</a>
+              Already Have an Account? <a href="#">Login</a>
             </small>
           </div>
         </form>

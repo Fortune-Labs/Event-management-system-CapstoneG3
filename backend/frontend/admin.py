@@ -8,8 +8,8 @@ from frontend.models import Account
 
 
 class AccountAdmin(UserAdmin):
-    list_display = ('email', 'username', 'first_name',
-                    'last_name', 'address', 'phone', 'city', 'is_admin', 'is_staff')
+    list_display = ('username','email','address',
+                    'last_name', 'first_name', 'phone', 'city', 'is_admin', 'is_staff')
     search_fields = ('email', 'username', 'last_name',)
     readonly_fields = ('date_joined', 'last_login')
 
