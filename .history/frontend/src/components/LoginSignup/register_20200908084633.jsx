@@ -16,8 +16,7 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const onSubmit = async (formData) => {
     console.log(formData);
-
-    let url = "http://127.0.0.1:8000/auth/register/";
+   /*  let url = "";
     fetch(url, {
       method: "POST",
       headers: {
@@ -32,7 +31,7 @@ const UseFormFuction = () => {
       .catch((error) => {
         console.error("Error:", error);
       });
-  };
+  }; */
 
   return (
     <div className="wrapper">
@@ -94,16 +93,15 @@ const UseFormFuction = () => {
             />
             <ErrorMessage error={errors.cpassword} />
           </div>
-          <div className="username">
+          <div className="address">
             <input
               type="text"
-              name="username"
-              ref={register({ required: true, minLength: 3 })}
-              placeholder="Enter Username"
+              name="address"
+              ref={register({ required: true, maxLength: 20 })}
+              placeholder="Address"
             />
-            <ErrorMessage error={errors.username} />
+            <ErrorMessage error={errors.address} />
           </div>
-
           <div className="phone">
             <input
               type="tel"
@@ -119,16 +117,27 @@ const UseFormFuction = () => {
             />
             <ErrorMessage error={errors.phone} />
           </div>
-          <div className="address">
-            <input
-              type="text"
-              name="address"
-              ref={register({ required: true, maxLength: 20 })}
-              placeholder="Address"
-            />
-            <ErrorMessage error={errors.address} />
-          </div>
 
+          {/*   <div className="city">
+            <select id="city" name="city" defaultValue="..">
+              <option value="..." disabled selected hidden>
+                Choose a city
+              </option>
+              <option value="Accra">Accra</option>
+              <option value="Kumasi">Kumasi</option>
+              <option value="Tamale">Tamale</option>
+              <option value="Takoradi">Takoradi</option>
+              <option value="Sunyani">Sunyani</option>
+              <option value="Cape_Coast">Cape Coast</option>
+              <option value="Obuasi">Obuasi</option>
+              <option value="Teshie">Teshie</option>
+              <option value="Koforidua">Koforidua</option>
+              <option value="Wa">Wa</option>
+              <option value="Bolgatanga">Bolgatanga</option>
+            </select>
+          </div> */}
+
+          {/* <ErrorMessage error={errors.city} />  */}
           <div className="register action-counter">
             <button type="submit" className="btn">
               Create Account

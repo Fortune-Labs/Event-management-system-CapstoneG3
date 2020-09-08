@@ -94,12 +94,12 @@ const UseFormFuction = () => {
             />
             <ErrorMessage error={errors.cpassword} />
           </div>
-          <div className="username">
+          <div className="useraname">
             <input
               type="text"
               name="username"
               ref={register({ required: true, minLength: 3 })}
-              placeholder="Enter Username"
+              placeholder="Enter Last name"
             />
             <ErrorMessage error={errors.username} />
           </div>
