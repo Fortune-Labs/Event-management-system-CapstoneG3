@@ -4,14 +4,16 @@ from .models import Account
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
 
+
 class RegisterSerializer(serializers.ModelSerializer):
+
     confirm_password = serializers.CharField(
         style={'input_type': 'password'}, write_only=True)
 
     class Meta:
         model = Account
-        fields = ['email', 'username', 'first_name',
-                  'last_name', 'address', 'phone', 'city', 'password', 'confirm_password']
+        fields = ['first_name', 'last_name', 'email', 'password',
+                  'confirm_password', 'username',  'phone', 'address']
         extra_kwargs = {'password': {'write_only': True}}
 
     def validate(self, attrs):
@@ -32,12 +34,13 @@ class RegisterSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         return Account.objects.create_user(**validated_data)
 
+
 class LoginSerializer(serializers.ModelSerializer):
-    email = serializers.EmailField(max_length=200, min_length=5)
+    email = serializers.EmailField(max_length=255, min_length=3)
     password = serializers.CharField(
-        max_length=68, min_length=5, write_only=True)
+        max_length=68, min_length=6, write_only=True)
     username = serializers.CharField(
-        max_length=200, min_length=3, read_only=True)
+        max_length=255, min_length=3, read_only=True)
     tokens = serializers.CharField(max_length=68, min_length=6, read_only=True)
 
     class Meta:
@@ -53,15 +56,14 @@ class LoginSerializer(serializers.ModelSerializer):
             raise AuthenticationFailed('Invalid credentials, try again')
         if not user.is_active:
             raise AuthenticationFailed('Account disabled, contact admin')
+
         # if not user.is_verified:
         #     raise AuthenticationFailed('Email is not verified')
 
         return {
             'email': user.email,
             'username': user.username,
-            'tokens': user.tokens
+            'tokens': user.tokens()
         }
 
         return super().validate(attrs)
-
-
