@@ -4,16 +4,15 @@ import { Link } from "react-router-dom";
 class Login extends Component {
   render() {
     return (
-      <div className="wrapper">
-        <div className="form-wrapper">
+      <div className="login-wrapper">
+        <div className="login-form-wrapper">
           <h1>Login</h1>
-          <form className="form">
-            
-            <div className="email">
+          <form className="login-form">
+            <div className="login-email">
               <input type="text" name="email" placeholder="Enter Email" />
             </div>
 
-            <div className="password">
+            <div className="login-password">
               <input
                 name="password"
                 type="password"
@@ -21,12 +20,18 @@ class Login extends Component {
                 required
               ></input>
             </div>
+            <div className="pwd-reset">
+              <Link to="/passwordReset" className="forgot">
+                Forgot password?
+              </Link>
+            </div>
             <div className="login">
               <button className="btn">Login</button>
             </div>
-            <Link to="/passwordReset" className="forgot">
-              Forgot password?
-            </Link>
+
+            <small>
+              Don't Have an Account? <Link to="register">Register Here</Link>
+            </small>
           </form>
         </div>
       </div>

@@ -150,19 +150,6 @@ input.error {
   letter-spacing: 1px;
   margin-bottom: 0.25em;
 }
-
-.register button:hover {
-  color: #519e8a;
-  background-color: #fff;
-  border: 2px solid #519e8a;
-}
-
-.register small {
-  color: #999;
-  font-weight: lighter;
-}
-/* Login style */
-
 .login button {
   background-color: #2c43a8;
   color: #fff;
@@ -183,12 +170,21 @@ input.error {
   border: 2px solid #519e8a;
 }
 
+.register button:hover {
+  color: #519e8a;
+  background-color: #fff;
+  border: 2px solid #519e8a;
+}
+
 small {
   color: #999;
   font-weight: lighter;
 }
+.register small {
+  color: #999;
+  font-weight: lighter;
+}
 
-/* general anchor tags */
 a:link,
 a:visited {
   color: #2c43a8;
