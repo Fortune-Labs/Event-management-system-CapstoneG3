@@ -184,9 +184,9 @@ input.error {
   display: flex;
   position: absolute;
   right: 10%;
-  margin-right: -25;
-  top: 20%;
-  margin-top: -25;
+  margin-right: -50;
+  top: 50%;
+  margin-top: -50;
   overflow: hidden;
   flex-direction: column;
   padding: 20px;

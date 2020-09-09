@@ -185,7 +185,7 @@ input.error {
   position: absolute;
   right: 10%;
   margin-right: -25;
-  top: 20%;
+  top: 50%;
   margin-top: -25;
   overflow: hidden;
   flex-direction: column;
