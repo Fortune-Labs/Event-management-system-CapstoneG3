@@ -12,19 +12,17 @@ class Home extends Component {
                   </a>
               </div>
               <nav class="header-nav">
-                  <a href="#" class="header-nav-item">HOME</a>
-                  <a href="#" class="header-nav-item">ABOUT</a>
-                  <a href="#" class="header-nav-item">EVENTS</a>
-                  <a href="#" class="header-nav-item">PLAYLIST</a>
-                  <a href="#" class="header-nav-item">GALLERY</a>
-                  <a href="#" class="header-nav-item">TICKETS</a>
-                  <a href="#" class="header-nav-item">OUR TEAM</a>
-                  <a href="#" class="header-nav-item">CONTACT</a>
+                  <a href="#" class="header-nav-item">Services</a>
+                  <a href="#" class="header-nav-item">Politics and Democracy</a>
+                  <a href="#" class="header-nav-item">Organization</a>
+                  <a href="#" class="header-nav-item">Job Vacancies</a>
+                  <a href="#" class="header-nav-item">Contact</a>
+                  <a href="#" class="header-nav-item">My Profile</a>
                   <button class="menu-toggle">Menu</button>
               </nav>
           </div>
       </header>
-    <div className="wrapper"></div>
+    <div className="wrapper"></div>;
   }
 }
 
