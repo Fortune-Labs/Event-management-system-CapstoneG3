@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 class Home extends Component {
   render() {
-    return (
-      <div className="main-wrapper">
+    return (main-wrapper
+      <div className="">
         <header class="header">
           <div class="header-content responsive-wrapper">
             <div class="header-logo">
@@ -42,7 +42,6 @@ class Home extends Component {
           </div>
         </header>
         <main class="main"></main>
-
         <footer class="footer">
           <div class="footer-content responsive-wrapper"></div>
         </footer>

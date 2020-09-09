@@ -12,7 +12,7 @@ function App() {
         <Switch>
           <div className="App">
             <Route path="/login" component={Login} />
-            <Route path="/passwordReset" component={passwordReset} />
+            <Route path="passwordReset" component={passwordReset} />
             <Route exact path="/register" component={Register} />
           </div>
         </Switch>

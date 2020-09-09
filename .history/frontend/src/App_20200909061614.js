@@ -11,9 +11,10 @@ function App() {
       <BrowserRouter>
         <Switch>
           <div className="App">
-            <Route path="/login" component={Login} />
-            <Route path="/passwordReset" component={passwordReset} />
-            <Route exact path="/register" component={Register} />
+            <Route path="/" component={Login} />
+            <Route exact path="/" component={Register} />
+
+            <Route path="passwordReset" component={passwordReset} />
           </div>
         </Switch>
       </BrowserRouter>

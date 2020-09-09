@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 class Home extends Component {
   render() {
     return (
-      <div className="main-wrapper">
+      <div className="main">
         <header class="header">
           <div class="header-content responsive-wrapper">
             <div class="header-logo">
               <a href="/" class="logo">
-                <img src="../Images/eventlogo.jpg" />
+                <img src="https://assets.codepen.io/285131/logo.png" />
               </a>
             </div>
             <nav class="header-nav">
@@ -41,11 +41,6 @@ class Home extends Component {
             </nav>
           </div>
         </header>
-        <main class="main"></main>
-
-        <footer class="footer">
-          <div class="footer-content responsive-wrapper"></div>
-        </footer>
       </div>
     );
   }
