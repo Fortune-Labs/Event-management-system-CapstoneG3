@@ -10,11 +10,13 @@ class Login extends Component {
           <h1 className="login-header">Login Here</h1>
 
           <form className="login-form">
-            <div className="login-email">
+            <div className="email">
+              <label>Email</label>
               <input type="text" name="email" placeholder="Enter Email" />
             </div>
 
-            <div className="login-password">
+            <div className="password">
+              <label>Password</label>
               <input
                 name="password"
                 type="password"
@@ -22,13 +24,16 @@ class Login extends Component {
                 required
               ></input>
             </div>
-            <div className="pwd-reset">
-              <Link to="/passwordReset" className="forgot">
-                Forgot password?
-              </Link>
-            </div>
+
             <div className="login">
-              <button className="btn">Login</button>
+              <div className="reset-pwd">
+                <Link to="/passwordReset" className="forgot">
+                  Forgot password?
+                </Link>
+              </div>
+              <div className="btn">
+                <button className="">Login</button>
+              </div>
             </div>
             <div>
               <small>

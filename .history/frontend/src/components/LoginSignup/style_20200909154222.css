@@ -132,7 +132,6 @@ input::placeholder {
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
-  text-align: center;
 }
 
 .register button:hover {
@@ -148,16 +147,14 @@ input::placeholder {
 /* Login style */
 
 .login-wrapper {
-  background-image: url("../Images/login-background.jpg");
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../Images/login-background.jpg");
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: #f2f2f2;
   margin: 0;
   position: relative;
@@ -234,30 +231,22 @@ input::placeholder {
 }
 
 .login button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background-color: #2c43a8;
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 8px 10px;
+  width: 200%;
+  padding: 8px 0px;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.5em;
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
+  margin-left: 1%;
   justify-content: flex-end;
-}
-
-.btn {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  right: 0;
-  width: 50%;
-}
-.reset-pwd {
-  display: flex;
-  width: 50%;
-  align-items: flex-start;
 }
 
 .login button:hover {
@@ -304,8 +293,8 @@ a:active {
 }
 @media only screen and (max-width: 770px) {
   .form-wrapper {
-    height: 100%;
-    /* min-height: 15rem; */
+    /* height: 100%; */
+    min-height: 15rem;
     margin-top: 2rem;
     width: 80%;
   }
@@ -329,8 +318,8 @@ a:active {
 
 @media only screen and (max-width: 812px) {
   .form-wrapper {
-    height: 100%;
-    /* min-height: 15rem; */
+    /* height: 100%; */
+    min-height: 15rem;
     margin-top: 2rem;
     width: 80%;
   }

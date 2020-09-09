@@ -10,6 +10,7 @@
 }
 
 .form-wrapper {
+  /* height: 100%; */
   min-height: 25rem;
   width: 30%;
   display: flex;
@@ -132,7 +133,6 @@ input::placeholder {
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
-  text-align: center;
 }
 
 .register button:hover {
@@ -148,16 +148,14 @@ input::placeholder {
 /* Login style */
 
 .login-wrapper {
-  background-image: url("../Images/login-background.jpg");
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../Images/login-background.jpg");
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: #f2f2f2;
   margin: 0;
   position: relative;
@@ -165,7 +163,7 @@ input::placeholder {
 
 .login-form-wrapper {
   height: 60%;
-  width: 50%;
+  width: 40%;
   display: flex;
   position: absolute;
   right: 10%;
@@ -212,8 +210,8 @@ input::placeholder {
   justify-content: center;
 }
 
-.email,
-.password {
+.login-email,
+.login-password {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -222,15 +220,13 @@ input::placeholder {
   justify-content: center;
 }
 
-.login-form .password {
-  margin-left: 0%;
-}
-
 .login {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
-  width: 49%;
+}
+
+.reset-pwd {
 }
 
 .login button {
@@ -238,26 +234,15 @@ input::placeholder {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 8px 10px;
-  text-align: center;
-  font-size: 0.8em;
+  width: 200%;
+  margin-left: 1.4rem;
+  padding: 8px 0px;
+  font-size: 0.5em;
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
-  justify-content: flex-end;
-}
-
-.btn {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  right: 0;
-  width: 50%;
-}
-.reset-pwd {
-  display: flex;
-  width: 50%;
-  align-items: flex-start;
+  position: relative;
+  right: 6px;
 }
 
 .login button:hover {
@@ -290,38 +275,15 @@ a:active {
     min-height: 15rem;
     width: 80%;
   }
-
-  .login-from-wrapper {
-    /* height: 100%; */
-    min-height: 10rem;
-    width: 80%;
-    position: absolute;
-  }
-  .email,
-  .password {
-    width: 80%;
-  }
 }
 @media only screen and (max-width: 770px) {
   .form-wrapper {
-    height: 100%;
-    /* min-height: 15rem; */
-    margin-top: 2rem;
-    width: 80%;
-  }
-
-  .login-form-wrapper {
     /* height: 100%; */
-    min-height: 20rem;
+    min-height: 15rem;
     margin-top: 2rem;
     width: 80%;
   }
   .wrapper {
-    height: 100%;
-    padding: 2rem !important;
-  }
-
-  .login-wrapper {
     height: 100%;
     padding: 2rem !important;
   }
@@ -329,34 +291,13 @@ a:active {
 
 @media only screen and (max-width: 812px) {
   .form-wrapper {
-    height: 100%;
-    /* min-height: 15rem; */
-    margin-top: 2rem;
-    width: 80%;
-  }
-  .login-wrapper {
-    height: 100%;
-  }
-
-  .login-form-wrapper {
     /* height: 100%; */
-    min-height: 20rem;
+    min-height: 15rem;
     margin-top: 2rem;
     width: 80%;
   }
   .wrapper {
     height: 100%;
     padding: 0 0 5rem;
-  }
-  .login-wrapper {
-    height: 100%;
-    padding: 0 0 5rem;
-  }
-  .login-form-wrapper {
-    /* height: 60%; */
-    /* width: 50%; */
-    /* display: flex; */
-    /* overrding position  */
-    position: static;
   }
 }
