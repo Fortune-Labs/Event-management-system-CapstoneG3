@@ -10,8 +10,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="App">
-          <Route path="/register" component={Register} />
-          <Route path="/" component={Login} />
+          <Route path="/" component={Register} />
+          <Route path="/login" component={Login} />
           <Route
             path="./components/LoginSignup/passwordReset"
             component={passwordReset}

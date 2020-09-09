@@ -135,7 +135,7 @@ const UseFormFuction = () => {
               Create Account
             </button>
             <small>
-              Already Have an Account? <Link to="Login">Login</Link>
+              Already Have an Account? <Link to="login">Login</Link>
             </small>
           </div>
         </form>

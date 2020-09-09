@@ -10,10 +10,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div className="App">
-          <Route path="/register" component={Register} />
-          <Route path="/" component={Login} />
           <Route
-            path="./components/LoginSignup/passwordReset"
+            path="./components/LoginSignup/register.jsx"
+            component={Register}
+          />
+          <Route path="/login" component={Login} />
+          <Route
+            path="./components/LoginSignup/passwordReset.jsx"
             component={passwordReset}
           />
         </div>
