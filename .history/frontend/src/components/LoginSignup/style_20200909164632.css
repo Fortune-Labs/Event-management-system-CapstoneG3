@@ -155,7 +155,7 @@ input::placeholder {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-size: cover;
+  background-size: fill;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f2f2f2;
@@ -240,7 +240,7 @@ input::placeholder {
   border-radius: 5px;
   padding: 8px 10px;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.5em;
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;

@@ -16,7 +16,7 @@ const UseFormFuction = () => {
   const password = useRef({});
   password.current = watch("password", "");
   const onSubmit = async (formData) => {
-    console.log(JSON.stringify(formData));
+    console.log(formData);
 
     let url = "http://127.0.0.1:8000/auth/register/";
     fetch(url, {
