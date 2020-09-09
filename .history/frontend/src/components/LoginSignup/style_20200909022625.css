@@ -210,8 +210,9 @@ input.error {
   padding: 10px 10px;
   border-radius: 5px;
   outline: none;
+
   border: 1px solid #cfcfcf;
-  font-size: 0.2em;
+  font-size: 0.4em;
 }
 
 .login-form-wrapper input::placeholder {

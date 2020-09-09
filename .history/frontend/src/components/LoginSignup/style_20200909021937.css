@@ -181,7 +181,6 @@ input.error {
   width: 40%;
   display: flex;
   /* position: absolute; */
-  overflow: hidden;
   flex-direction: column;
   padding: 20px;
   border-radius: 10px;
@@ -211,7 +210,7 @@ input.error {
   border-radius: 5px;
   outline: none;
   border: 1px solid #cfcfcf;
-  font-size: 0.2em;
+  font-size: 0.6em;
 }
 
 .login-form-wrapper input::placeholder {

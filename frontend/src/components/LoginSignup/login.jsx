@@ -6,7 +6,7 @@ class Login extends Component {
     return (
       <div className="login-wrapper">
         <div className="login-form-wrapper">
-          <h1>Login</h1>
+          <h1 className="login-header">Login</h1>
           <form className="login-form">
             <div className="login-email">
               <input type="text" name="email" placeholder="Enter Email" />
@@ -28,10 +28,11 @@ class Login extends Component {
             <div className="login">
               <button className="btn">Login</button>
             </div>
-
-            <small>
-              Don't Have an Account? <Link to="register">Register Here</Link>
-            </small>
+            <div>
+              <small>
+                Don't Have an Account? <Link to="register">Register Here</Link>
+              </small>
+            </div>
           </form>
         </div>
       </div>
