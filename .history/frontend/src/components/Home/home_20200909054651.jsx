@@ -41,10 +41,6 @@ class Home extends Component {
             </nav>
           </div>
         </header>
-        <main class="main"></main>
-        <footer class="footer">
-          <div class="footer-content responsive-wrapper"></div>
-        </footer>
       </div>
     );
   }
