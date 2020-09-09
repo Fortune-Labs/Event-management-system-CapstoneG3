@@ -10,14 +10,23 @@
 }
 
 .form-wrapper {
+  /* height: 100%; */
   min-height: 25rem;
   width: 30%;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 0px 10px 50px #555;
   background-color: #ffffff;
+}
+
+.register-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .register-header {
@@ -30,20 +39,11 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.register-form {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
 label {
-  font-size: 16px;
+  font-size: 10px;
   margin-bottom: 0.09em;
   color: #222;
-  font-weight: 12px;
-  text-align: left;
+  font-weight: lighter;
 }
 
 input[type="text"],
@@ -147,16 +147,14 @@ input::placeholder {
 /* Login style */
 
 .login-wrapper {
-  background-image: url("../Images/login-background.jpg");
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("../Images/login-background.jpg");
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: #f2f2f2;
   margin: 0;
   position: relative;
@@ -164,7 +162,7 @@ input::placeholder {
 
 .login-form-wrapper {
   height: 60%;
-  width: 50%;
+  width: 40%;
   display: flex;
   position: absolute;
   right: 10%;
@@ -174,7 +172,7 @@ input::placeholder {
   overflow: hidden;
   flex-direction: column;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: 0px 10px 50px #555;
   background-color: #ffffff;
 }
@@ -211,8 +209,8 @@ input::placeholder {
   justify-content: center;
 }
 
-.email,
-.password {
+.login-email,
+.login-password {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -221,15 +219,16 @@ input::placeholder {
   justify-content: center;
 }
 
-.login-form .password {
-  margin-left: 0%;
+.login {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
 }
 
 .login {
   display: flex;
   flex-direction: row;
-  margin-bottom: 10px;
-  width: 49%;
+  margin-bottom: 15px;
 }
 
 .login button {
@@ -237,26 +236,16 @@ input::placeholder {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 5px;
-  padding: 8px 10px;
-  text-align: center;
+  width: 130%;
+  margin-top: 1em;
+  padding: 8px 0px;
   font-size: 0.5em;
   font-weight: lighter;
   letter-spacing: 1px;
   margin-bottom: 0.25em;
-  justify-content: flex-end;
 }
-
-.btn {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  right: 0;
-  width: 50%;
-}
-.reset-pwd {
-  display: flex;
-  width: 50%;
-  align-items: flex-start;
+.pwd-reset {
+  margin-right: 1%;
 }
 
 .login button:hover {
@@ -289,17 +278,6 @@ a:active {
     min-height: 15rem;
     width: 80%;
   }
-
-  .login-from-wrapper {
-    /* height: 100%; */
-    min-height: 10rem;
-    width: 80%;
-    position: absolute;
-  }
-  .email,
-  .password {
-    width: 80%;
-  }
 }
 @media only screen and (max-width: 770px) {
   .form-wrapper {
@@ -308,19 +286,7 @@ a:active {
     margin-top: 2rem;
     width: 80%;
   }
-
-  .login-form-wrapper {
-    /* height: 100%; */
-    min-height: 20rem;
-    margin-top: 2rem;
-    width: 80%;
-  }
   .wrapper {
-    height: 100%;
-    padding: 2rem !important;
-  }
-
-  .login-wrapper {
     height: 100%;
     padding: 2rem !important;
   }
@@ -333,29 +299,8 @@ a:active {
     margin-top: 2rem;
     width: 80%;
   }
-  .login-wrapper {
-    height: 100%;
-  }
-
-  .login-form-wrapper {
-    /* height: 100%; */
-    min-height: 20rem;
-    margin-top: 2rem;
-    width: 80%;
-  }
   .wrapper {
     height: 100%;
     padding: 0 0 5rem;
-  }
-  .login-wrapper {
-    height: 100%;
-    padding: 0 0 5rem;
-  }
-  .login-form-wrapper {
-    /* height: 60%; */
-    /* width: 50%; */
-    /* display: flex; */
-    /* overrding position  */
-    position: static;
   }
 }

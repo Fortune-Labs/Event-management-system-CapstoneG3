@@ -155,8 +155,6 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: #f2f2f2;
   margin: 0;
   position: relative;
