@@ -4,8 +4,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 
 
 # Create your models here.
-
-
 class CustomUserManager(BaseUserManager):
     """
     Custom user model manager where email is the unique identifiers
@@ -54,7 +52,6 @@ class CustomUserManager(BaseUserManager):
             username=username,
             phone=phone,
             address=address,
-
         )
 
         """
@@ -85,25 +82,6 @@ class Account(AbstractBaseUser, PermissionsMixin):
         verbose_name='phone', max_length=10, blank=True)
     address = models.TextField(
         verbose_name='address', max_length=200, blank=True)
-
-    # password field supplied by AbstractBaseUser
-    # last_login field supplied by AbstractBaseUser
-    # cities = (
-    #     ('Accra', 'Accra'),
-    #     ('Kumasi', 'Kumasi'),
-    #     ('Tamale', 'Tamale'),
-    #     ('Takoradi', 'Takoradi'),
-    #     ('Sunyani', 'Sunyani'),
-    #     ('Cape_Coast', 'Cape Coast'),
-    #     ('Obuasi', 'Obuasi'),
-    #     ('Teshie', 'Teshie'),
-    #     ('Koforidua', 'Koforidua'),
-    #     ('Wa', 'Wa'),
-    #     ('Bolgatanga', 'Bolgatanga'),
-    # )
-
-    # city = models.CharField(verbose_name='city', max_length=50,
-    #                         choices=cities, default='')
 
     # Designates whether this user should be treated as active.
     # Unselect this instead of deleting accounts.
