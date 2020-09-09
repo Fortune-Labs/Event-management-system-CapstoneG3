@@ -39,7 +39,7 @@ const UseFormFuction = () => {
     <div className="wrapper">
       <div className="form-wrapper">
         <form onSubmit={handleSubmit(onSubmit)} className="register-form">
-          <h1 className="register-header">Registration</h1>
+          <h1>Registration</h1>
           <div className="firstName">
             <input
               type="text"

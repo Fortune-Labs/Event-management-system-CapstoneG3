@@ -144,14 +144,14 @@ const UseFormFuction = () => {
   );
 };
 //Components register
-class Register extends Component {
-  render() {
-    return (
-      <div>
-        <UseFormFuction />
-      </div>
-    );
-  }
-}
+// class Register extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <UseFormFuction />
+//       </div>
+//     );
+//   }
+// }
 
 export default Register;

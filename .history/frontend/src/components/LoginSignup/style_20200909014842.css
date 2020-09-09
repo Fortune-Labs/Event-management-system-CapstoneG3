@@ -11,9 +11,8 @@
 }
 
 .form-wrapper {
-  /* height: 100%; */
-  min-height: 25rem;
-  width: 40%;
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -167,27 +166,19 @@ input.error {
 .login-wrapper {
   height: 100vh;
   width: 100%;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  background-image: url("../Images/login-background.jpg");
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #f2f2f2;
+
   margin: 0;
-  position: relative;
 }
 
 .login-form-wrapper {
-  height: 60%;
-  width: 40%;
+  height: 100%;
+  width: 50%;
   display: flex;
-  position: absolute;
-  right: 10%;
-  margin-right: -25;
-  top: 20%;
-  margin-top: -25;
-  overflow: hidden;
   flex-direction: column;
   padding: 20px;
   border-radius: 10px;
@@ -212,20 +203,6 @@ input.error {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.login-form-wrapper input {
-  padding: 10px 10px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid #cfcfcf;
-  font-size: 0.2em;
-}
-
-.login-form-wrapper input::placeholder {
-  font-size: 1em;
-  font-weight: lighter;
-  color: #999;
-}
-
 .login button {
   background-color: #2c43a8;
   color: #fff;
@@ -239,8 +216,7 @@ input.error {
   letter-spacing: 1px;
   margin-bottom: 0.25em;
 }
-.pwd-reset,
-.login-email {
+.pwd-reset {
   margin-right: 1%;
 }
 
@@ -265,38 +241,4 @@ a:visited {
 a:hover,
 a:active {
   color: #519e8a;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 480px) {
-  .form-wrapper {
-    /* height: 100%; */
-    min-height: 15rem;
-    width: 80%;
-  }
-}
-@media only screen and (max-width: 770px) {
-  .form-wrapper {
-    /* height: 100%; */
-    min-height: 15rem;
-    margin-top: 2rem;
-    width: 80%;
-  }
-  .wrapper {
-    height: 100%;
-    padding: 2rem !important;
-  }
-}
-
-@media only screen and (max-width: 812px) {
-  .form-wrapper {
-    /* height: 100%; */
-    min-height: 15rem;
-    margin-top: 2rem;
-    width: 80%;
-  }
-  .wrapper {
-    height: 100%;
-    padding: 0 0 5rem;
-  }
 }

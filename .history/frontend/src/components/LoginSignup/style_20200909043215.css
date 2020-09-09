@@ -167,10 +167,10 @@ input.error {
 .login-wrapper {
   height: 100vh;
   width: 100%;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("../Images/login-background.jpg");
   background-size: cover;
   background-color: #f2f2f2;
@@ -183,10 +183,6 @@ input.error {
   width: 40%;
   display: flex;
   position: absolute;
-  right: 10%;
-  margin-right: -25;
-  top: 20%;
-  margin-top: -25;
   overflow: hidden;
   flex-direction: column;
   padding: 20px;
