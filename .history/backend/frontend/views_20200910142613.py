@@ -29,6 +29,9 @@ class RegisterView(generics.GenericAPIView):
        
         return Response(user_data, status=status.HTTP_201_CREATED)
 
+
+
+
 class LoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
     def post(self, request):
