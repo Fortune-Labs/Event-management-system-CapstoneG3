@@ -6,17 +6,17 @@ class Home extends Component {
   render() {
     return (
       <div className="main-wrapper">
-        <div className="header-bar">
-          {/*  <a>
+        <div className="main">
+          <div className="header-bar">
+            {/*  <a>
               <img src="../Images/eventlogo.jpg" alt="…" />
               CapstoneG3
             </a> */}
 
-          <Link to="Login">Login</Link>
-          <Link to="about">About</Link>
-          <Link to="home">Home</Link>
-        </div>
-        <div className="main">
+            <Link to="Login">Login</Link>
+            <Link to="about">About</Link>
+            <Link to="home">Home</Link>
+          </div>
           <div className="get-started">
             <h1>creative</h1>
             <h2>Lets make something creative</h2>

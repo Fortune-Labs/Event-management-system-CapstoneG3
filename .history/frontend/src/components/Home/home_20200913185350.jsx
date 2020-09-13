@@ -11,10 +11,9 @@ class Home extends Component {
               <img src="../Images/eventlogo.jpg" alt="…" />
               CapstoneG3
             </a> */}
-
-          <Link to="Login">Login</Link>
-          <Link to="about">About</Link>
           <Link to="home">Home</Link>
+          <Link to="about">About</Link>
+          <Link to="Login">Login</Link>
         </div>
         <div className="main">
           <div className="get-started">
@@ -27,9 +26,7 @@ class Home extends Component {
               weddings, formal parties, concerts, or conventions.
             </p>
             <div className="get-started-btn">
-              <Link underline="none" to="Login">
-                Get Started
-              </Link>
+              <Link to="Login">Get Started</Link>
             </div>
           </div>
           <div className="home-login"></div>

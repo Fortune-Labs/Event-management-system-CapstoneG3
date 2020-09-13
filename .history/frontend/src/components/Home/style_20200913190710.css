@@ -15,15 +15,6 @@
   background-color: rgb(224, 214, 199);
 }
 
-.header-bar a {
-  font-size: 20px;
-  text-transform: uppercase;
-  font-weight: bold;
-  float: right;
-  margin-right: 25px;
-  text-decoration: none !important ;
-}
-
 .main {
   height: 100vh;
   position: relative;
@@ -159,7 +150,7 @@
   margin-bottom: 0.25em;
 }
 
-.get-started-btn a {
+.get-started-btn link {
   text-decoration: none !important ;
 }
 

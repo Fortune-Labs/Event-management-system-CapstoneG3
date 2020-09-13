@@ -15,13 +15,11 @@
   background-color: rgb(224, 214, 199);
 }
 
-.header-bar a {
+.header-bar link {
+  text-decoration-style: none;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
-  float: right;
-  margin-right: 25px;
-  text-decoration: none !important ;
 }
 
 .main {
@@ -159,7 +157,7 @@
   margin-bottom: 0.25em;
 }
 
-.get-started-btn a {
+.get-started-btn link {
   text-decoration: none !important ;
 }
 

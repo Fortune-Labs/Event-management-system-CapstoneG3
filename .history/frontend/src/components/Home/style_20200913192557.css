@@ -10,16 +10,16 @@
 }
 
 .header-bar {
-  height: 45px;
+  /* height: 45px; */
   /* border-bottom: 5px solid red; */
   background-color: rgb(224, 214, 199);
 }
 
-.header-bar a {
+.main a {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
-  float: right;
+  float: left;
   margin-right: 25px;
   text-decoration: none !important ;
 }

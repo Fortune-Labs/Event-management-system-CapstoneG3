@@ -6,18 +6,20 @@ class Home extends Component {
   render() {
     return (
       <div className="main-wrapper">
-        <div className="header-bar">
-          {/*  <a>
+        <header>
+          <nav className="nav-area">
+            <a>
               <img src="../Images/eventlogo.jpg" alt="…" />
               CapstoneG3
-            </a> */}
+            </a>
+            <Link to="home">Home</Link>
+            <Link to="about">About</Link>
+            <Link to="Login">Login</Link>
+          </nav>
+        </header>
 
-          <Link to="Login">Login</Link>
-          <Link to="about">About</Link>
-          <Link to="home">Home</Link>
-        </div>
-        <div className="main">
-          <div className="get-started">
+        <div className="get-started">
+          <div class="welcome-text">
             <h1>creative</h1>
             <h2>Lets make something creative</h2>
             <p>
@@ -26,14 +28,12 @@ class Home extends Component {
               corporate events such as festivals, conferences, ceremonies,
               weddings, formal parties, concerts, or conventions.
             </p>
-            <div className="get-started-btn">
-              <Link underline="none" to="Login">
-                Get Started
-              </Link>
-            </div>
+            <button type="submit" className="btn">
+              <Link to="Login">Get Started</Link>
+            </button>
           </div>
-          <div className="home-login"></div>
         </div>
+        <div className="home-login"></div>
       </div>
     );
   }

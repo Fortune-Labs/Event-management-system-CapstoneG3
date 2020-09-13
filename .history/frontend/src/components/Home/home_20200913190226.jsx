@@ -11,10 +11,9 @@ class Home extends Component {
               <img src="../Images/eventlogo.jpg" alt="…" />
               CapstoneG3
             </a> */}
-
-          <Link to="Login">Login</Link>
-          <Link to="about">About</Link>
           <Link to="home">Home</Link>
+          <Link to="about">About</Link>
+          <Link to="Login">Login</Link>
         </div>
         <div className="main">
           <div className="get-started">

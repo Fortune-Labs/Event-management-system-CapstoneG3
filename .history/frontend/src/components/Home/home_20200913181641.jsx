@@ -7,14 +7,15 @@ class Home extends Component {
     return (
       <div className="main-wrapper">
         <div className="header-bar">
-          {/*  <a>
+          <nav className="nav-area">
+            {/*  <a>
               <img src="../Images/eventlogo.jpg" alt="…" />
               CapstoneG3
             </a> */}
-
-          <Link to="Login">Login</Link>
-          <Link to="about">About</Link>
-          <Link to="home">Home</Link>
+            <Link to="home">Home</Link>
+            <Link to="about">About</Link>
+            <Link to="Login">Login</Link>
+          </nav>
         </div>
         <div className="main">
           <div className="get-started">
@@ -26,11 +27,9 @@ class Home extends Component {
               corporate events such as festivals, conferences, ceremonies,
               weddings, formal parties, concerts, or conventions.
             </p>
-            <div className="get-started-btn">
-              <Link underline="none" to="Login">
-                Get Started
-              </Link>
-            </div>
+            <button type="submit" className="btn">
+              <Link to="Login">Get Started</Link>
+            </button>
           </div>
           <div className="home-login"></div>
         </div>
