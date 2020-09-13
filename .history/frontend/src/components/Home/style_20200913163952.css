@@ -14,13 +14,10 @@
   margin: 0;
 }
 
-header {
-  width: 100%;
+.header {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: column; */
   margin: 0;
-  position: absolute;
-  top: 0;
 }
 
 .get-started {

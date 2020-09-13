@@ -9,12 +9,25 @@ class Home extends Component {
         <header>
           <a>
             <img src="../Images/eventlogo.jpg" alt="…" />
-            CapstoneG3
           </a>
           <nav className="nav-area">
-            <Link to="home">Home</Link>
-            <Link to="about">About</Link>
-            <Link to="Login">Login</Link>
+            <ul>
+              <li>
+                <button type="submit" className="btn">
+                  <Link to="home">Home</Link>
+                </button>
+              </li>
+              <li>
+                <button type="submit" className="btn">
+                  <Link to="about">About</Link>
+                </button>
+              </li>
+              <li>
+                <button type="submit" className="btn">
+                  <Link to="Login">Login</Link>
+                </button>
+              </li>
+            </ul>
           </nav>
         </header>
 

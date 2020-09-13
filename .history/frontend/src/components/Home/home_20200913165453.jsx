@@ -13,7 +13,9 @@ class Home extends Component {
           </a>
           <nav className="nav-area">
             <Link to="home">Home</Link>
+
             <Link to="about">About</Link>
+
             <Link to="Login">Login</Link>
           </nav>
         </header>

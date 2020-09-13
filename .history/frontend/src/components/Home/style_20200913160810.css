@@ -14,18 +14,15 @@
   margin: 0;
 }
 
-header {
-  width: 100%;
+.header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0;
-  position: absolute;
-  top: 0;
 }
 
 .get-started {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   width: 50%;
 }
 .home-login {

@@ -7,14 +7,27 @@ class Home extends Component {
     return (
       <div className="main-wrapper">
         <header>
-          <a>
-            <img src="../Images/eventlogo.jpg" alt="…" />
-            CapstoneG3
-          </a>
-          <nav className="nav-area">
-            <Link to="home">Home</Link>
-            <Link to="about">About</Link>
-            <Link to="Login">Login</Link>
+          <div className="logo">
+            <img src="../Images/eventlogo.jpg" alt="#"></img>
+          </div>
+          <nav>
+            <ul class="nav-area">
+              <li>
+                <button type="submit" className="btn">
+                  <Link to="home">Home</Link>
+                </button>
+              </li>
+              <li>
+                <button type="submit" className="btn">
+                  <Link to="about">About</Link>
+                </button>
+              </li>
+              <li>
+                <button type="submit" className="btn">
+                  <Link to="Login">Login</Link>
+                </button>
+              </li>
+            </ul>
           </nav>
         </header>
 
