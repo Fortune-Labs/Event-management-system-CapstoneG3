@@ -6,22 +6,6 @@ class Home extends Component {
   render() {
     return (
       <div className="main-wrapper">
-        <header>
-          {/* <div className="logo">
-              <img src="#" alt=""></img>
-            </div> */}
-          <ul class="nav-area">
-            <li>
-              <Link to="home">Home</Link>
-            </li>
-            <li>
-              <Link to="about">About</Link>
-            </li>
-            <li>
-              <Link to="login">Login</Link>
-            </li>
-          </ul>
-        </header>
         <div className="get-started">
           <div class="welcome-text">
             <h1>creative</h1>
