@@ -18,8 +18,8 @@ class Home extends Component {
             </p>
           </div>
           <div className="get-started">
-            <button type="submit" className="btn">
-              <Link to="Login">Get Started</Link>
+            <button type="submit" className="btn1">
+              Create Account
             </button>
           </div>
         </div>

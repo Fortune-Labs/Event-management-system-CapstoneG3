@@ -85,7 +85,9 @@ header {
     text-align: center;
     margin: auto;
   }
-
+  img {
+    width: ;
+  }
   .nav-area {
     float: none;
     margin-top: 0;

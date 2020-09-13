@@ -17,10 +17,8 @@ class Home extends Component {
               weddings, formal parties, concerts, or conventions.
             </p>
           </div>
-          <div className="get-started">
-            <button type="submit" className="btn">
-              <Link to="Login">Get Started</Link>
-            </button>
+          <div className="">
+            <Link to="Login">Login</Link>
           </div>
         </div>
         <div>

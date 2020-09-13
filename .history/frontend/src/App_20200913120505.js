@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Route>
           <div className="App">
-            <Route path="/home" component={Home} />
+            <Route path="/login" component={Login} />
             <Route path="/login" component={Login} />
             <Route path="/passwordReset" component={passwordReset} />
             <Route exact path="/register" component={Register} />

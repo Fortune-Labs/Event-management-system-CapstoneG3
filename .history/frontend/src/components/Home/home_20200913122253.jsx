@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./style.css";
+import "./style.css";
 import { Link } from "react-router-dom";
 
 class Home extends Component {
@@ -16,11 +16,6 @@ class Home extends Component {
               corporate events such as festivals, conferences, ceremonies,
               weddings, formal parties, concerts, or conventions.
             </p>
-          </div>
-          <div className="get-started">
-            <button type="submit" className="btn">
-              <Link to="Login">Get Started</Link>
-            </button>
           </div>
         </div>
         <div>
