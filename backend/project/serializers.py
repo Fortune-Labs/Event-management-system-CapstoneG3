@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from models import AddEvent
+from .models import AddEvent
 
 class AddEventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
