@@ -28,10 +28,6 @@ class Home extends Component {
               </li>
             </ul>
           </div>
-          <div class="welcome-text">
-            <h1>We are creative</h1>
-            <a href="#">Contact US</a>
-          </div>
         </header>
       </div>
     );
