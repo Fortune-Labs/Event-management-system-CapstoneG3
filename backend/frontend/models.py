@@ -153,7 +153,7 @@ class AddEvent(models.Model):
         ('100 square feet'),
         ('others'),
     )
-    room_capacity = models.CharField(max_length=50,choices=ROOM_CAPACITY)
+    room_capacity = models.PositiveIntegar(max_length=50,choices=ROOM_CAPACITY)
     TOPICS =(
         ('Meetings'),
         ('Weddings'),

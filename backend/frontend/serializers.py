@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import Account
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
+from .models import AddEvent
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -67,3 +68,9 @@ class LoginSerializer(serializers.ModelSerializer):
         }
 
         return super().validate(attrs)
+from rest_framework import serializers
+
+class AddEventSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=AddEvent
+        fields=['times','speakers','room-capacity','topics']
