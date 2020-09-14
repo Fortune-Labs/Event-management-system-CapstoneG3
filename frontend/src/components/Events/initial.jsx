@@ -6,20 +6,20 @@ class Initial extends Component {
     render() {
       return (
         <div> 
-            <div class = "leftBox">
-            <div class = "content">
+            <div className = "leftBox">
+            <div className = "content">
                 <h1>Events and Shows</h1>
                <p> Welcome to Capstone G3 Event Management System. Where all
                 you event are created, organised and scheduled with ease. </p>
             </div>
         </div>
-        <div class ="events">
+        <div className ="events">
         <ul>
                 <li>
-                    <div class ="time">
-                        <h2>15<br><span>Sept</span></br></h2>
+                    <div className ="time">
+                        <h2>15<span>Sept</span></h2>
                     </div>
-                    <div class="details">
+                    <div className="details">
                         <h3>View Events Happening Live</h3>
                         <p> You will be able to view and book
                             your event in any category of your choice. There are a wide
@@ -27,14 +27,14 @@ class Initial extends Component {
                             Click view details below to begin.
                         </p>
                         <a href= "#">View Details</a>
-                        <div style ="clear: both;"></div>
+                       
                     </div>
                 </li>
                 <li>
-                    <div class ="time">
-                        <h2>15<br><span>Sept</span></br></h2>
+                    <div className ="time">
+                        <h2>15<span>Sept</span></h2>
                     </div>
-                    <div class="details">
+                    <div className="details">
                         <h3>View Events Happening Live</h3>
                         <p> You will be able to view and book
                             your event in any category of your choice. There are a wide
@@ -42,7 +42,7 @@ class Initial extends Component {
                             Click view details below to begin.
                         </p>
                         <a href= "#">View Details</a>
-                        <div style ="clear: both;"></div>
+                       
                     </div>
                 </li>
             </ul>
