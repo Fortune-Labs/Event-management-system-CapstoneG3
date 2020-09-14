@@ -183,19 +183,19 @@
 
 .get-started-btn {
   width: 100%;
-  text-align: center;
 
-  /* margin-bottom: 0.25em; */
+  padding: 8px 10px;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  margin-bottom: 0.25em;
 }
 
 .get-started-btn a {
   background-color: #2c43a8;
   border: 2px solid #fff;
-  padding: 8px 10px;
   border-radius: 5px;
-  font-size: 0.8em;
-  font-weight: lighter;
-  letter-spacing: 1px;
   text-decoration: none;
   color: #fff;
 }

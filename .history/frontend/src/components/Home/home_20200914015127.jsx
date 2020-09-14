@@ -7,12 +7,13 @@ class Home extends Component {
     return (
       <div className="main-wrapper">
         <div className="header-bar">
-          {/*   <div className="logo">
+          <div>
             <a>
               <img src="../Images/eventlogo.jpg" alt="#" />
               CapstoneG3
             </a>
-          </div> */}
+          </div>
+
           <Link to="home">Home</Link>
           <Link to="about">About</Link>
           <Link to="Login">Login</Link>
