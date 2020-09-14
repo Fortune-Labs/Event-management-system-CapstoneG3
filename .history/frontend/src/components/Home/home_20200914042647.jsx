@@ -23,7 +23,7 @@ class Home extends Component {
             <p className="tagline">
               <span>Plan.</span>
               <span>Organize.</span>
-              <span>Schedule Events.</span>
+              <span>Scheduled.</span>
             </p>
             <div className="get-started-btn">
               <Link to="register">Get Started</Link>

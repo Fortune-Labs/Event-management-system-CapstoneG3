@@ -69,6 +69,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* justify-content: center; */
+  /* align-items: center; */
   margin: 0;
   align-items: flex-start;
   color: #fff;

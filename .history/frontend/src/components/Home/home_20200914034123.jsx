@@ -19,14 +19,18 @@ class Home extends Component {
         </div>
         <div className="main">
           <div className="home-login">
-            <h1>Capstone Events</h1>
-            <p className="tagline">
-              <span>Plan.</span>
-              <span>Organize.</span>
-              <span>Schedule Events.</span>
+            <h1>creative</h1>
+            <h2>Lets make something creative</h2>
+            <p>
+              Event management is the application of project management to the
+              creation and development of small and/or large-scale personal or
+              corporate events such as festivals, conferences, ceremonies,
+              weddings, formal parties, concerts, or conventions.
             </p>
             <div className="get-started-btn">
-              <Link to="register">Get Started</Link>
+              <Link underline="none" to="Login">
+                Get Started
+              </Link>
             </div>
           </div>
         </div>

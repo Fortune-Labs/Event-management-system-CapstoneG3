@@ -61,7 +61,7 @@
 }
 
 .home-login {
-  background-image: url("../Images/business-woman-2071342_1920.jpg");
+  background-image: url("../Images/home-login.jpg");
   height: 100%;
   width: 100%;
   display: flex;
@@ -69,47 +69,32 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* justify-content: center; */
+  /* align-items: center; */
   margin: 0;
   align-items: flex-start;
   color: #fff;
-
-  padding-left: 20px;
 }
 
-.tagline {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 62px;
-  font-weight: bold;
-  animation: 2s slide-right;
-  animation-delay: 2s;
-}
-
-@keyframes slide-right {
-  from {
-    margin-left: -500px;
-  }
-
-  to {
-    margin-left: 0%;
-  }
-}
 .home-login h1 {
   font-size: 40px;
 }
+.home-login h2 {
+}
+.home-login p {
+}
 
 .get-started-btn {
+  width: 100%;
   text-align: center;
-  justify-content: flex-start;
 }
 
 .get-started-btn a {
-  background-color: #44444e;
-  border: 2px;
+  background-color: #5d5d61;
+  border: 2px solid #fff;
   padding: 8px 10px;
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 0.8em;
   font-weight: bold;
   letter-spacing: 1px;
   text-decoration: none;

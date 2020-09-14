@@ -44,12 +44,19 @@
   border-radius: 5px;
   text-decoration: none;
   padding: 8px;
-  transition: all ease 0.7s;
+  transition: all ease 0.5s;
 }
 
 .header-bar a:hover {
-  background-color: rgb(53, 53, 48);
+  background-color: beige;
 }
+
+/* .logo a { */
+/* display: flex; */
+/* align-items: flex-start; */
+/* margin-right: 0; */
+/* justify-content: start; */
+/* } */
 
 .main {
   height: 100vh;
@@ -60,65 +67,52 @@
   overflow: auto;
 }
 
-.home-login {
-  background-image: url("../Images/business-woman-2071342_1920.jpg");
-  height: 100%;
+.get-started {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.get-started h1 {
+}
+.get-started h2 {
+}
+.get-started p {
+}
+
+.get-started-btn {
   width: 100%;
+  text-align: center;
+}
+
+.get-started-btn a {
+  background-color: #5d5d61;
+  border: 2px solid #fff;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.home-login {
+  background-image: url("../Images/home-login.jpg");
+  height: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  align-items: flex-start;
-  color: #fff;
-
-  padding-left: 20px;
-}
-
-.tagline {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 62px;
-  font-weight: bold;
-  animation: 2s slide-right;
-  animation-delay: 2s;
-}
-
-@keyframes slide-right {
-  from {
-    margin-left: -500px;
-  }
-
-  to {
-    margin-left: 0%;
-  }
-}
-.home-login h1 {
-  font-size: 40px;
-}
-
-.get-started-btn {
-  text-align: center;
-  justify-content: flex-start;
-}
-
-.get-started-btn a {
-  background-color: #44444e;
-  border: 2px;
-  padding: 8px 10px;
-  border-radius: 5px;
-  font-size: 1.2em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: #fff;
-  transition: 0.5s;
-}
-
-.get-started-btn a:hover {
-  background-color: rgb(92, 81, 81);
+  position: relative;
 }
 
 /* resposive */

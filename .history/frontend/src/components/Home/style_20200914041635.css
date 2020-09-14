@@ -69,6 +69,8 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* justify-content: center; */
+  /* align-items: center; */
   margin: 0;
   align-items: flex-start;
   color: #fff;
@@ -105,8 +107,8 @@
 }
 
 .get-started-btn a {
-  background-color: #44444e;
-  border: 2px;
+  background-color: #5d5d61;
+  border: 2px solid #fff;
   padding: 8px 10px;
   border-radius: 5px;
   font-size: 1.2em;

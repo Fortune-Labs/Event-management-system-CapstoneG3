@@ -23,10 +23,18 @@ class Home extends Component {
             <p className="tagline">
               <span>Plan.</span>
               <span>Organize.</span>
-              <span>Schedule Events.</span>
+              <span>Get Events Scheduled.</span>
+            </p>
+            <p>
+              Event management is the application of project management to the
+              creation and development of small and/or large-scale personal or
+              corporate events such as festivals, conferences, ceremonies,
+              weddings, formal parties, concerts, or conventions.
             </p>
             <div className="get-started-btn">
-              <Link to="register">Get Started</Link>
+              <Link underline="none" to="Login">
+                Get Started
+              </Link>
             </div>
           </div>
         </div>
