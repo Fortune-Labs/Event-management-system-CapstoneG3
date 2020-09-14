@@ -1,22 +1,18 @@
 from django.shortcuts import render
-
-# Create your views here.
-# from django.shortcuts import render
-
-
-
+from rest_framework import viewsets
+from serializers import AddEventSerializer
+from .models import AddEvent
 from django.shortcuts import render
-from rest_framework import generics, status  
+from rest_framework import generics, status
 from .serializers import RegisterSerializer, LoginSerializer
 from rest_framework.response import Response
 from .models import Account
-
-
+# Create your views here.
+# from django.shortcuts import render
 
 class RegisterView(generics.GenericAPIView):
 
     serializer_class = RegisterSerializer
-    
 
     def post(self, request):
         print("request received")
@@ -26,14 +22,17 @@ class RegisterView(generics.GenericAPIView):
         serializer.save()
         user_data = serializer.data
         user = Account.objects.get(email=user_data['email'])
-       
+
         return Response(user_data, status=status.HTTP_201_CREATED)
 
 class LoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
-        
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+#Create your views here. this is the views of addevent for the event registration
+class AddEventViewSet(viewsets.ModelViewSet):
+    queryset = AddEvent.objects.all()
+    serializer_class = AddEventSerializer

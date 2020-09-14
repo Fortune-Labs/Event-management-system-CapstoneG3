@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'frontend',
+    'djoser',
+
 ]
 
 MIDDLEWARE = [
@@ -96,6 +98,13 @@ REST_FRAMEWORK = {
     ),
 }
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -144,3 +153,6 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 
+CORS_ORIGIN_WHITELIST=[
+    'http://localhost:3000',
+]

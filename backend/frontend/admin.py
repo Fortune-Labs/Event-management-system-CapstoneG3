@@ -4,7 +4,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from frontend.models import Account
-
+from .models import AddEvent
 
 class AccountAdmin(UserAdmin):
     list_display = ('first_name', 'last_name', 'email',
@@ -15,6 +15,10 @@ class AccountAdmin(UserAdmin):
     filter_horizontal = ()
     list_filter = ()
     fieldsets = ()
-
+class AddEventAdmin(admin.ModelAdmin):
+    list_display = ['times','speakers','room_capacity','topics']
+admin.site.register(AddEvent, AddEventAdmin)
 
 admin.site.register(Account, AccountAdmin)
+
+
