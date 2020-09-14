@@ -17,6 +17,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/passwordReset" component={passwordReset} />
             <Route exact path="/register" component={Register} />
+            <Route path="/initial" component={Initial} />
           </div>
         </Route>
       </BrowserRouter>
