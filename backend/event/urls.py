@@ -1,12 +1,12 @@
 from django.urls import path
 from .views import EventCreate
-from rest_framework_simplejwt.views import TokenRefreshView
-from django.urls import path, include
+
+from django.urls import path
 from rest_framework import serializers
 
 
+app_name = 'event'
 
 urlpatterns = [
-    path('api/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('event-create/', EventCreate.as_view()),
+    path('event-create/', EventCreate.as_view(), name='event-create'),
 ]

@@ -1,13 +1,14 @@
 from django.shortcuts import render
 #from rest_framework import viewsets
-#from .models import Event
+
 from django.shortcuts import render
 from rest_framework import generics, status
-from .serializers import RegisterSerializer, LoginSerializer,#EventSerializer
+from .serializers import RegisterSerializer, LoginSerializer
 from rest_framework.response import Response
 from .models import Account
 # Create your views here.
 # from django.shortcuts import render
+
 
 class RegisterView(generics.GenericAPIView):
 
@@ -24,14 +25,11 @@ class RegisterView(generics.GenericAPIView):
 
         return Response(user_data, status=status.HTTP_201_CREATED)
 
+
 class LoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
+
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
-#Create your views here. this is the views of addevent for the event registration
-
-
-

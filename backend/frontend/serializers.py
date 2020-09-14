@@ -3,7 +3,6 @@ from rest_framework import serializers
 from .models import Account
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
-from .models import Event
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -68,5 +67,3 @@ class LoginSerializer(serializers.ModelSerializer):
         }
 
         return super().validate(attrs)
-from rest_framework import serializers
-

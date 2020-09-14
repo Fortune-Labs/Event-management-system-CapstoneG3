@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'frontend',
     'djoser',
+    'event'
 
 ]
 
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../frontend')], #Templates dir
+        'DIRS': [os.path.join(BASE_DIR, '../frontend')],  # Templates dir
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -153,6 +154,6 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 
-CORS_ORIGIN_WHITELIST=[
+CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
