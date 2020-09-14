@@ -140,13 +140,7 @@ class AddEvent(models.Model):
         ('Afternoon'),
     )
     times = models.CharField(max_length=50, choices='TIMES')
-    SPEAKERS = (
-        ('Samuel'),
-        ('Aminatu'),
-        ('Fortunatus'),
-        ('others')
-    )
-    speakers = models.CharField(max_length=50, choices=SPEAKERS)
+    speakers = models.CharField(max_length=50,)
     ROOM_CAPACITY = (
         ('600 square feet'),
         ('400 square feet'),
@@ -164,7 +158,7 @@ class AddEvent(models.Model):
         ('award events'),
         ('others'),
     )
-    topics=models.CharField(max_length=100)
+    topics=models.CharField(max_length=100, choices=TOPICS)
 add = models.CharField(default=False)
 def __str__(self):
         return self.times
