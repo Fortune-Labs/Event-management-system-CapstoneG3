@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 class Initial extends Component {
     render() {
       return (
-        <div> 
+        <div className ="main-container"> 
+        <div className= "section">
             <div className = "leftBox">
             <div className = "content">
                 <h1>Events and Shows</h1>
@@ -26,7 +27,7 @@ class Initial extends Component {
                             variety of categories that make your event come alive. 
                             Click view details below to begin.
                         </p>
-                        <a href= "#">View Details</a>
+                        <Link to = "view">View Details</Link>
                        
                     </div>
                 </li>
@@ -41,14 +42,14 @@ class Initial extends Component {
                             variety of categories that make your event come alive. 
                             Click view details below to begin.
                         </p>
-                        <a href= "#">View Details</a>
+                        <Link to = "book">View Details</Link>
                        
                     </div>
                 </li>
             </ul>
 
              </div>
-           
+             </div>
         </div>
       );
     }
