@@ -70,8 +70,3 @@ class LoginSerializer(serializers.ModelSerializer):
         return super().validate(attrs)
 from rest_framework import serializers
 
-class EventSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=Event
-        #fields=['times','speaker','room-capacity','topic','tagline']
-        exclude=[]

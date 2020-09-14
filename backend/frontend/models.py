@@ -133,16 +133,3 @@ class Account(AbstractBaseUser, PermissionsMixin):
 
         }
         #this is to create an add event on the event registration system
-class Event(models.Model):
-    TIMES = (
-        ('Morning', 'Morning'),
-        ('Midmorning', 'Midmorning'),
-        ('Afternoon', 'Afternoon'),
-    )
-    times = models.CharField(max_length=30, blank=False, choices=TIMES)
-    speaker = models.CharField(max_length=50,)
-    room_capacity = models.PositiveIntegerField()
-    topic=models.CharField(max_length=100)
-    tagline = models.CharField(max_length=100)
-    def __str__(self):
-        return self.topic
