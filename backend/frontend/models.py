@@ -132,4 +132,3 @@ class Account(AbstractBaseUser, PermissionsMixin):
             'access': str(refresh.access_token)
 
         }
-        #this is to create an add event on the event registration system

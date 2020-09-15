@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import EventCreate
+from .views import EventCreate, BookingView, EventView
 
 from django.urls import path
 from rest_framework import serializers
@@ -9,4 +9,6 @@ app_name = 'event'
 
 urlpatterns = [
     path('event-create/', EventCreate.as_view(), name='event-create'),
+    path('event-book/', BookingView.as_view(), name='event-booking'),
+    path('view-events/', EventView.as_view(), name='event-list'),
 ]

@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.response import Response
-from .serializers import EventSerializer
-from .models import Event
+from .serializers import EventSerializer, BookingSerializer
+from .models import Event, Booking
 
 # Create your views here.
 
@@ -20,3 +20,23 @@ class EventCreate(generics.GenericAPIView):
         event = Event.objects.get(topic=event_data['topic'])
 
         return Response(event_data, status=status.HTTP_201_CREATED)
+
+
+class EventView(generics.ListAPIView):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+
+
+class BookingView(generics.ListCreateAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+    def post(self, request):
+        book = request.data
+        serializer = self.serializer_class(data=book)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        book_data = serializer.data
+        book = Booking.objects.get(event=book_data['event'])
+
+        return Response(book_data, status=status.HTTP_201_CREATED)
