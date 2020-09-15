@@ -1,5 +1,5 @@
 from django.db import models
-from frontend.models import Account
+from user_account.models import Account
 
 
 # Create your models here.

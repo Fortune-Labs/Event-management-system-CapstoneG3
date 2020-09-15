@@ -2,10 +2,10 @@
 # # Register your models here.
 from django.contrib import admin
 
-from frontend.models import Account
+from user_account.models import Account
 
 
-class AccountAdmin(UserAdmin):
+class AccountAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email',
                     'username', 'phone', 'address', 'is_admin', 'is_staff', 'is_active')
     search_fields = ('email', 'username', 'last_name',)
