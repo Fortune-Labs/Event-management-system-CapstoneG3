@@ -18,7 +18,7 @@ class Initial extends Component {
         <ul>
                 <li>
                     <div className ="time">
-                        <h2>15<span>Sept</span></h2>
+                        <h2>V</h2>
                     </div>
                     <div className="details">
                         <h3>View Events Happening Live</h3>
@@ -33,7 +33,7 @@ class Initial extends Component {
                 </li>
                 <li>
                     <div className ="time">
-                        <h2>15<span>Sept</span></h2>
+                        <h2>D</h2>
                     </div>
                     <div className="details">
                         <h3>View Events Happening Live</h3>
