@@ -7,6 +7,7 @@ class Initial extends Component {
     render() {
       return (
         <div className ="main-container"> 
+         <Slider />
         <div className= "section">
             <div className = "leftBox">
             <div className = "content">
