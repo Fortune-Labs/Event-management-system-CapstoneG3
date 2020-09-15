@@ -5,7 +5,7 @@ from django.db import models
 
 class EventCreate(models.Model):
 
-    def create_event(self, topic, times, venue, room_capacity, speaker, tagline):
+    def create_event(self, topic, times, room_capacity, speaker, tagline):
         """
         Create and save a Event with the given email and password.
         """
@@ -13,8 +13,6 @@ class EventCreate(models.Model):
             raise ValueError(_('The Topic name must be set'))
         if not times:
             raise ValueError(_('The Time of the Event must be set'))
-        if not venue:
-            raise ValueError(_('The Event venue must be set'))
         if not room_capacity:
             raise ValueError(_('The Room Capacity must be set'))
         if not speaker:
@@ -25,7 +23,6 @@ class EventCreate(models.Model):
         event = self.model(
             topic=topic,
             times=times,
-            venue=venue,
             room_capacity=room_capacity,
             speaker=speaker,
             tagline=tagline,
@@ -37,6 +34,7 @@ class EventCreate(models.Model):
 
 
 class Event(models.Model):
+    topic = models.CharField(max_length=100)
     TIMES = (
         ('Morning', 'Morning'),
         ('Midmorning', 'Midmorning'),
@@ -45,7 +43,6 @@ class Event(models.Model):
     times = models.CharField(max_length=30, blank=False, choices=TIMES)
     speaker = models.CharField(max_length=50,)
     room_capacity = models.PositiveIntegerField()
-    topic = models.CharField(max_length=100)
     tagline = models.CharField(max_length=100)
 
     def __str__(self):
