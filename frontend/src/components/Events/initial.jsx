@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-
+import Carousel from 'react-elastic-carousel';
 
 class Initial extends Component {
     render() {
