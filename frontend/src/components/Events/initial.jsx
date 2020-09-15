@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import Carousel from 'react-elastic-carousel';
 
 class Initial extends Component {
     render() {
       return (
         <div className ="main-container"> 
-         <Slider />
         <div className= "section">
             <div className = "leftBox">
             <div className = "content">
@@ -20,7 +18,7 @@ class Initial extends Component {
         <ul>
                 <li>
                     <div className ="time">
-                        <h2>V</h2>
+                        <h2>15<span>Sept</span></h2>
                     </div>
                     <div className="details">
                         <h3>View Events Happening Live</h3>
@@ -35,7 +33,7 @@ class Initial extends Component {
                 </li>
                 <li>
                     <div className ="time">
-                        <h2>D</h2>
+                        <h2>15<span>Sept</span></h2>
                     </div>
                     <div className="details">
                         <h3>View Events Happening Live</h3>
