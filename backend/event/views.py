@@ -40,3 +40,8 @@ class BookingView(generics.ListCreateAPIView):
         book = Booking.objects.get(event=book_data['event'])
 
         return Response(book_data, status=status.HTTP_201_CREATED)
+
+
+class BookedEventsView(generics.ListAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
