@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'frontend',
+    'user_account',
     'djoser',
+    'event'
 
 ]
 
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '../frontend')], #Templates dir
+        'DIRS': [os.path.join(BASE_DIR, '../user_account')],  # Templates dir
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-AUTH_USER_MODEL = 'frontend.Account'
+AUTH_USER_MODEL = 'user_account.Account'
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -98,13 +99,6 @@ REST_FRAMEWORK = {
     ),
 }
 
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -144,7 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '../frontend/build/static'),
+    os.path.join(BASE_DIR, '../user_account/build/static'),
 ]
 
 
@@ -153,6 +147,6 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 
-CORS_ORIGIN_WHITELIST=[
+CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
 ]
