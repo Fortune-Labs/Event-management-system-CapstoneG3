@@ -5,7 +5,12 @@ from .models import Event, Booking
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['times', 'speaker', 'room_capacity', 'topic']
+    list_display = ('topic', 'time', 'speaker', 'room_capacity', 'tagline')
+    search_fields = ('topic', 'speaker', 'tagline')
+
+    filter_horizontal = ()
+    list_filter = ()
+    fieldsets = ()
 
 
 class BookAdmin(admin.ModelAdmin):
