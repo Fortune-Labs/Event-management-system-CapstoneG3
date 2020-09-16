@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+.main-wrapper {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  font-weight: bold;
+}
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  border-radius: 0;
+  font: inherit;
+}
+
+button {
+  border: 1px solid;
+  background-color: transparent;
+}
+
+body {
+  font-family: "Manrope", "DM Sans", sans-serif;
+  color: var(--color-text-primary);
+}
+
+.responsive-wrapper {
+  width: 90%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  display: flex;
+  border-bottom: 2px solid var(--color-border-primary);
+  height: 92px;
+  border-top: 8px solid var(--color-border-secondary);
+}
+
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.logo {
+  display: block;
+  padding-top: 20px;
+  margin-bottom: -20px;
+  height: 100px;
+}
+.logo img {
+  max-height: 100%;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-item {
+  margin-left: 1.5rem;
+  font-weight: 400;
+  font-size: 1.125rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  transition: color 0.15s ease;
+  display: none;
+}
+a:after {
+  display: block;
+  height: 4px;
+  transform: scale(0);
+  background-color: var(--color-links-primary);
+  border-radius: 4px 4px 0 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.25s ease;
+  transform-origin: bottom center;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-links-primary);
+}
+
+a:after {
+  transform: scale(1);
+}
+
+.menu-toggle {
+  border: 1px solid;
+  border-bottom-width: 3px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+}
+
+.menu-toggle a:before {
+  display: block;
+  content: "menu";
+  font-family: "Material Icons Outlined";
+  font-size: 1.5rem;
+  margin-right: 0.25rem;
+}
+
+.link {
+  color: var(--color-links-primary);
+}
+
+@include screen-size(large) {
+  display: none;
+}
+
+@include screen-size(large) {
+  display: flex;
+}
