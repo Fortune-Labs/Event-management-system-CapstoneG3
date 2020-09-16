@@ -9,6 +9,7 @@ class EventSerializer(serializers.ModelSerializer):
         # fields=['times','speaker','room-capacity','topic','tagline']
         exclude = []
 
+
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
