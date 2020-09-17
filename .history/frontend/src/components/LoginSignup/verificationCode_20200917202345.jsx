@@ -16,7 +16,7 @@ class VerificationCode extends Component {
             ></input>
           </label>
         </form>
-        <div className="pwd-res-btn">
+        <div className="btn">
           <button>Confirm</button>
         </div>
       </div>

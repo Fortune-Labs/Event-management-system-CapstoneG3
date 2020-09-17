@@ -283,28 +283,14 @@ a:active {
   color: #519e8a;
 }
 
-/* password reset */
-.pwd-res-btn {
+/* password */
+pwd-res-btn {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   right: 0;
   width: 50%;
 }
-.pwd-res-btn button {
-  background-color: #2c43a8;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  padding: 8px 10px;
-  text-align: center;
-  font-size: 0.8em;
-  font-weight: lighter;
-  letter-spacing: 1px;
-  margin-bottom: 0.25em;
-  justify-content: flex-end;
-}
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 480px) {
   .form-wrapper {
