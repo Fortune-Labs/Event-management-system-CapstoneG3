@@ -39,7 +39,7 @@ class BookingView(generics.ListCreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         book_data = serializer.data
-        book = Booking.objects.get(event=book_data['event'])
+       # book = Booking.objects.get(event=book_data['event'])
 
         return Response(book_data, status=status.HTTP_201_CREATED)
 
@@ -59,4 +59,13 @@ class EventsBookedByUser(APIView):
         qs = u.booking_set.all().values_list("event", flat=True)
         qs = Event.objects.filter(pk__in=qs)
         events = EventSerializer(qs, many=True)
+        return Response(events.data)
+
+class EventAttendees(APIView):
+    def get(self,request, pk):
+        print(pk)
+        event = Event.objects.get(pk=pk)
+        bookingset = Booking.objects.filter(event=event)
+        #serializer_class = BookingSerializer
+        events = BookingSerializer(bookingset, many=True)
         return Response(events.data)
