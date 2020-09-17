@@ -51,7 +51,7 @@ class PasswordReset extends Component {
               ></input>
               <span>{this.emailMessage()}</span>
             </div>
-            <div className="pwd-res-btn">
+            <div className="btn">
               <button className="" onClick={this.handleSubmit}>
                 Submit.
               </button>
