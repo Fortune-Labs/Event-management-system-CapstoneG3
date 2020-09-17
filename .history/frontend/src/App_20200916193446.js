@@ -3,17 +3,17 @@ import "./App.css";
 import Register from "./components/LoginSignup/register";
 import Login from "./components/LoginSignup/login";
 import passwordReset from "./components/LoginSignup/passwordReset";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/home";
 import Initial from "./components/Events/initial";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
           <div className="App">
-            <Route exact path="/" name="Home" component={Home} />
+            <Route path="/" name="Home" component={Home} />
             <Route exact path="/login" name="Login Page" component={Login} />
             <Route exact path="/passwordReset" component={passwordReset} />
             <Route
@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/initial" component={Initial} />
           </div>
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
