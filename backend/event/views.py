@@ -3,6 +3,8 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from .serializers import EventSerializer, BookingSerializer
 from .models import Event, Booking
+from user_account.models import Account
+from rest_framework.views import APIView
 
 # Create your views here.
 
@@ -37,6 +39,33 @@ class BookingView(generics.ListCreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         book_data = serializer.data
-        book = Booking.objects.get(event=book_data['event'])
+       # book = Booking.objects.get(event=book_data['event'])
 
         return Response(book_data, status=status.HTTP_201_CREATED)
+
+
+class BookedEventsView(generics.ListAPIView):
+    queryset = Booking.objects.all()
+    serializer_class = BookingSerializer
+
+
+class EventsBookedByUser(APIView):
+    def get(self, request, pk, format=None):
+        try:
+            u = Account.objects.get(pk=pk)
+        except:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        qs = u.booking_set.all().values_list("event", flat=True)
+        qs = Event.objects.filter(pk__in=qs)
+        events = EventSerializer(qs, many=True)
+        return Response(events.data)
+
+class EventAttendees(APIView):
+    def get(self,request, pk):
+        print(pk)
+        event = Event.objects.get(pk=pk)
+        bookingset = Booking.objects.filter(event=event)
+        #serializer_class = BookingSerializer
+        events = BookingSerializer(bookingset, many=True)
+        return Response(events.data)

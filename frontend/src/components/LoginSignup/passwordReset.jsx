@@ -1,4 +1,4 @@
-            import React, { Component } from "react";
+import React, { Component } from "react";
 import VerificationCode from "./verificationCode.jsx";
 
 class PasswordReset extends Component {
@@ -35,25 +35,30 @@ class PasswordReset extends Component {
 
   render() {
     return (
-      <>
-        <form className="wholeForm">
-          <div>
-            Your email
-            <input
-              name="email"
-              type="email"
-              placeholder="Enter your email here"
-              onChange={this.onInputFieldChange}
-              required
-            ></input>
-            <span>{this.emailMessage()}</span>
-          </div>          
-        </form>
-        <button onClick={this.handleSubmit} className="btn">
-          Submit.
-        </button>
-        {this.verificationComponent()}
-      </>
+      <div className="login-wrapper">
+        <div className="login-form-wrapper">
+          <h3>Forgot your password?</h3>
+          <form className="wholeForm">
+            <div>
+              Your email
+              <input
+                name="email"
+                type="email"
+                placeholder="Enter your email here"
+                onChange={this.onInputFieldChange}
+                required
+              ></input>
+              <span>{this.emailMessage()}</span>
+            </div>
+            <div className="btn">
+              <button className="" onClick={this.handleSubmit}>
+                Submit.
+              </button>
+            </div>
+          </form>
+          {this.verificationComponent()}
+        </div>
+      </div>
     );
   }
 }
