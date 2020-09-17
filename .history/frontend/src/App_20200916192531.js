@@ -14,15 +14,10 @@ function App() {
         <Switch>
           <div className="App">
             <Route path="/" name="Home" component={Home} />
-            <Route exact path="/login" name="Login Page" component={Login} />
-            <Route exact path="/passwordReset" component={passwordReset} />
-            <Route
-              exact
-              path="/register"
-              name="Register Page"
-              component={Register}
-            />
-            <Route exact path="/initial" component={Initial} />
+            <Route path="/login" name="Login Page" component={Login} />
+            <Route path="/passwordReset" component={passwordReset} />
+            <Route exact path="/register" component={Register} />
+            <Route path="/initial" component={Initial} />
           </div>
         </Switch>
       </BrowserRouter>
