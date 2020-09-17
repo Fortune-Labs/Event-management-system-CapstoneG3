@@ -35,9 +35,9 @@ const UseFormFuction = () => {
       });
   };
 
-  /*  function initialPage() {
-    document.location.href = "/initial";
-  } */
+  function initialPage() {
+    alert("Hello!");
+  }
 
   return (
     <div className="wrapper">
@@ -135,7 +135,7 @@ const UseFormFuction = () => {
           </div>
 
           <div className="register action-counter">
-            <button type="submit" className="btn1">
+            <button onClick={initialPage} type="submit" className="btn1">
               Create Account
             </button>
             <small>

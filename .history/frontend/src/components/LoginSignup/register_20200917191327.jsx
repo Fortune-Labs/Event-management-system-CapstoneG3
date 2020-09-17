@@ -17,6 +17,7 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const onSubmit = (formData) => {
     console.log(formData);
+    document.location.href = "/initial";
 
     let url = "http://127.0.0.1:8000/auth/register/";
     fetch(url, {
@@ -35,9 +36,7 @@ const UseFormFuction = () => {
       });
   };
 
-  /*  function initialPage() {
-    document.location.href = "/initial";
-  } */
+  function initialPage() {}
 
   return (
     <div className="wrapper">
@@ -135,7 +134,7 @@ const UseFormFuction = () => {
           </div>
 
           <div className="register action-counter">
-            <button type="submit" className="btn1">
+            <button onClick={initialPage} type="submit" className="btn1">
               Create Account
             </button>
             <small>
