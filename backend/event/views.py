@@ -41,7 +41,7 @@ class EventView(generics.ListAPIView):
 class BookingView (generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         book = request.data
