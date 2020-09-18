@@ -1,3 +1,4 @@
+import React from "react";
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 // javascript plugin used to create scrollbars on windows
@@ -110,7 +111,7 @@ class Admin extends Component {
             ref="mainPanel"
             data={this.state.backgroundColor}
           >
-            <Navbar
+            <AdminNavbar
               {...this.props}
               brandText={this.getBrandText(this.props.location.pathname)}
               toggleSidebar={this.toggleSidebar}
@@ -128,7 +129,7 @@ class Admin extends Component {
             }
           </div>
         </div>
-        <Plugin
+        <FixedPlugin
           bgColor={this.state.backgroundColor}
           handleBgClick={this.handleBgClick}
         />

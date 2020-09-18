@@ -128,7 +128,7 @@ class Admin extends Component {
             }
           </div>
         </div>
-        <Plugin
+        <FixedPlugin
           bgColor={this.state.backgroundColor}
           handleBgClick={this.handleBgClick}
         />

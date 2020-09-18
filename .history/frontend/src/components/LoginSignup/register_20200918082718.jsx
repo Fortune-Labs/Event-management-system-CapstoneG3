@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import "./style.css";
 import ErrorMessage from "./errorMessages";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
 import history from "../Events/initial";
 
 //Regular expression that holds email validation of form example@thismail.com
@@ -144,7 +143,6 @@ const UseFormFuction = () => {
               type="submit"
               className="btn1"
               //   onClick={() => history.push("/initial")}
-              onClick={() => history.push("/initial")}
             >
               Create Account
             </button>

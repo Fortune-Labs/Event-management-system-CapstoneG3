@@ -6,7 +6,7 @@ import passwordReset from "./components/LoginSignup/passwordReset";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/home";
 import Initial from "./components/Events/initial";
-// import Admin from "./components/Dashboard/admin/admin";
+import Initial from "./components/Dashboard/admin/admin";
 
 function App() {
   return (

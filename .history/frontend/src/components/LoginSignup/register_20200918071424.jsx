@@ -3,8 +3,6 @@ import { useForm } from "react-hook-form";
 import "./style.css";
 import ErrorMessage from "./errorMessages";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
-import history from "../Events/initial";
 
 //Regular expression that holds email validation of form example@thismail.com
 const emailRegex = RegExp(
@@ -32,9 +30,6 @@ const UseFormFuction = () => {
       .then((data) => {
         console.log("Registered Sucessfully", data);
       })
-      .then((response) => (response.document.location.href = "/initial"))
-      /*  .then(() => {
-      history.push('/users'); */
       .catch((error) => {
         console.error("Error:", error);
       });
@@ -143,8 +138,7 @@ const UseFormFuction = () => {
             <button
               type="submit"
               className="btn1"
-              //   onClick={() => history.push("/initial")}
-              onClick={() => history.push("/initial")}
+              onClick={() => history.push("../Events/initial.jsx")}
             >
               Create Account
             </button>
