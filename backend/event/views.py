@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 
 
 # Event Creation view
+
+
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
@@ -22,15 +24,16 @@ class EventCreate(generics.GenericAPIView):
 
         return Response(event_data, status=status.HTTP_201_CREATED)
 
-# Events list view
+# List of all events created
 
 
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 
-
 # Events booking view
+
+
 class BookingView(generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
@@ -44,14 +47,14 @@ class BookingView(generics.ListCreateAPIView):
 
         return Response(book_data, status=status.HTTP_201_CREATED)
 
-# Booked Events view
+# List of all bookings made
 
 
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
 
-# Events booked by user view
+# User's view of all events booked
 
 
 class EventsBookedByUser(APIView):
@@ -66,7 +69,7 @@ class EventsBookedByUser(APIView):
         events = EventSerializer(qs, many=True)
         return Response(events.data)
 
-# Events attendees view
+# View of all attendees of an event
 
 
 class EventAttendees(APIView):

@@ -1,8 +1,9 @@
 from django.db import models
 from user_account.models import Account
 
-
 # Events Module
+
+
 class Event(models.Model):
     topic = models.CharField(max_length=100)
     TIMES = (
