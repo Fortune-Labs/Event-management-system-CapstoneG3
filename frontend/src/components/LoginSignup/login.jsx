@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 //import initial from "./Events/initial.jsx";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 class Login extends Component {
   state = {
@@ -45,6 +46,8 @@ class Login extends Component {
   };
 
   render() {
+    if (this.state.IsSubmitted) return <Redirect to="/initial" />;
+
     return (
       <div className="login-wrapper">
         <div className="login-form-wrapper">
