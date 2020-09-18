@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from rest_framework import generics, status
+from rest_framework import generics, status, permissions
 from rest_framework.response import Response
 from .serializers import EventSerializer, BookingSerializer
 from .models import Event, Booking
 from user_account.models import Account
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-
+from rest_framework.authentication import BasicAuthentication
+from knox.auth import TokenAuthentication
+from knox.views import LoginView as KnoxLoginView
 
 # Event Creation view
 
@@ -36,9 +38,10 @@ class EventView(generics.ListAPIView):
 # Events booking view
 
 
-class BookingView(generics.ListCreateAPIView):
+class BookingView (generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request):
         book = request.data
