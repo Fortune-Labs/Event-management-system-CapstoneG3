@@ -36,11 +36,8 @@ class CustomUserManager(BaseUserManager):
             phone=phone,
             address=address,
         )
-
-        # user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
-        # user.save()
         return user
 
     def create_superuser(self, first_name, last_name, email, password, username, phone, address, **extra_fields):
@@ -60,13 +57,13 @@ class CustomUserManager(BaseUserManager):
         user.is_admin = True
         user.is_staff = True
         user.is_superuser = True
-        # user.save(using=self._db)
         user.save()
         return user
 
 
 class Account(AbstractBaseUser, PermissionsMixin):
 
+    # Setting various fields and field characteristics a user account is supposed to have.
     first_name = models.CharField(
         verbose_name='first name', max_length=30, blank=True)
     last_name = models.CharField(
@@ -74,17 +71,16 @@ class Account(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(
         verbose_name='email address', max_length=255, unique=True
     )
+    # Username field has been set to unique
     username = models.CharField(
         verbose_name='username', max_length=255, unique=True)
 
-    # phone = PhoneNumberField(null=False, blank=False, unique=True)
     phone = models.CharField(
         verbose_name='phone', max_length=10, blank=True)
     address = models.TextField(
         verbose_name='address', max_length=200, blank=True)
 
     # Designates whether this user should be treated as active.
-    # Unselect this instead of deleting accounts.
     is_active = models.BooleanField(default=True)
 
     # Designates whether the user can log into this admin site.

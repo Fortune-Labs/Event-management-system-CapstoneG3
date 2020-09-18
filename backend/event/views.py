@@ -66,6 +66,7 @@ class EventAttendees(APIView):
         print(pk)
         event = Event.objects.get(pk=pk)
         bookingset = Booking.objects.filter(event=event)
-        #serializer_class = BookingSerializer
         events = BookingSerializer(bookingset, many=True)
+        queryset = Event.objects.all()
         return Response(events.data)
+
