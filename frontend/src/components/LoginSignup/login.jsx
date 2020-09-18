@@ -46,9 +46,14 @@ class Login extends Component {
   };
 
   render() {
+<<<<<<< HEAD
     if (this.state.IsSubmitted) {
       return <Redirect to="/initial" />;
     }
+=======
+    if (this.state.IsSubmitted) return <Redirect to="/initial" />;
+
+>>>>>>> Sampson
     return (
       <div className="login-wrapper">
         <div className="login-form-wrapper">
