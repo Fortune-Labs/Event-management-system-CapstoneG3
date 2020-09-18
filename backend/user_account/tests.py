@@ -69,3 +69,28 @@ class RegisterTest(BaseTest):
         response = self.client.post(
             self.register_url, self.user, format='text/html')
         self.assertEqual(response.status_code, 400)
+
+    
+    class LoginTest(BaseTest):
+        def test_login_success(self):
+            self.client.post(self.register_url, self.user, format='text')
+            user = Account.objects.filter(email=self.user['email']).first()
+            response = self.client.post(
+                self.login_url, self.user, format='text')
+            self.assertEqual(response.status_code, 401)
+
+        def test_cantlogin_with_unverified_email(self):
+            self.client.post(self.register_url, self.user, format='text')
+            response = self.client.post(
+                self.login_url, self.user, format='text')
+            self.assertEqual(response.status_code, 401)
+
+        def test_cantlogin_with_no_username(self):
+            response = self.client.post(
+                self.login_url, {'password': 'passwped', 'username': ''}, format='text')
+            self.assertEqual(response.status_code, 400)
+
+        def test_cantlogin_with_no_password(self):
+            response = self.client.post(
+                self.login_url, {'username': 'passwped', 'password': ''}, format='text/html')
+            self.assertEqual(response.status_code, 400)
