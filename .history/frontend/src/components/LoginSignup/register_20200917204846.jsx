@@ -17,6 +17,9 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const onSubmit = (formData) => {
     console.log(formData);
+    function initialPage() {
+      document.location.href = "/initial";
+    }
 
     let url = "http://127.0.0.1:8000/auth/register/";
     fetch(url, {
@@ -35,9 +38,6 @@ const UseFormFuction = () => {
       });
   };
 
-  function initialPage() {
-    document.location.href = "/initial";
-  }
   return (
     <div className="wrapper">
       <div className="form-wrapper">
