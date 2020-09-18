@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 
 # Create your views here.
 
-
+# Event Creation view
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
@@ -23,12 +23,12 @@ class EventCreate(generics.GenericAPIView):
 
         return Response(event_data, status=status.HTTP_201_CREATED)
 
-
+# List of all events created
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-
-
+    
+# Events booking view
 class BookingView(generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
@@ -43,12 +43,12 @@ class BookingView(generics.ListCreateAPIView):
 
         return Response(book_data, status=status.HTTP_201_CREATED)
 
-
+# List of all bookings made
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
 
-
+# User's view of all events booked
 class EventsBookedByUser(APIView):
     def get(self, request, pk, format=None):
         try:
@@ -60,7 +60,8 @@ class EventsBookedByUser(APIView):
         qs = Event.objects.filter(pk__in=qs)
         events = EventSerializer(qs, many=True)
         return Response(events.data)
-
+    
+# View of all attendees of an event
 class EventAttendees(APIView):
     def get(self,request, pk):
         print(pk)
