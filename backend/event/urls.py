@@ -4,7 +4,7 @@ from .views import EventCreate, BookingView, EventView, BookedEventsView, Events
 from django.urls import path
 from rest_framework import serializers
 from . import views
-
+from knox import views as knox_views
 
 app_name = 'event'
 

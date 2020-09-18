@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'user_account',
     'djoser',
-    'event'
+    'event',
+    'knox'
 
 ]
 
@@ -95,7 +96,9 @@ REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_AUTHENTICATION_CLASSES': (
 
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
     ),
 }
 

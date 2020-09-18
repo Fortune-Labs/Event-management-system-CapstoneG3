@@ -5,6 +5,7 @@ from .serializers import EventSerializer, BookingSerializer
 from .models import Event, Booking
 from user_account.models import Account
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 
 
 # Event Creation view
@@ -13,6 +14,7 @@ from rest_framework.views import APIView
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+    permission_classes = [IsAuthenticated]
 
     def post(self, request):
         event = request.data
