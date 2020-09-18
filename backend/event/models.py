@@ -2,8 +2,7 @@ from django.db import models
 from user_account.models import Account
 
 
-# Create your models here.
-
+# Events Module
 class Event(models.Model):
     topic = models.CharField(max_length=100)
     TIMES = (
@@ -18,6 +17,8 @@ class Event(models.Model):
 
     def __str__(self):
         return self.topic
+
+# Booking Module
 
 
 class Booking(models.Model):

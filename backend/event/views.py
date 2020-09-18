@@ -6,9 +6,8 @@ from .models import Event, Booking
 from user_account.models import Account
 from rest_framework.views import APIView
 
-# Create your views here.
 
-
+# Event Creation view
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
@@ -23,12 +22,15 @@ class EventCreate(generics.GenericAPIView):
 
         return Response(event_data, status=status.HTTP_201_CREATED)
 
+# Events list view
+
 
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 
 
+# Events booking view
 class BookingView(generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
@@ -39,14 +41,17 @@ class BookingView(generics.ListCreateAPIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         book_data = serializer.data
-       # book = Booking.objects.get(event=book_data['event'])
 
         return Response(book_data, status=status.HTTP_201_CREATED)
+
+# Booked Events view
 
 
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+
+# Events booked by user view
 
 
 class EventsBookedByUser(APIView):
@@ -61,12 +66,14 @@ class EventsBookedByUser(APIView):
         events = EventSerializer(qs, many=True)
         return Response(events.data)
 
+# Events attendees view
+
+
 class EventAttendees(APIView):
-    def get(self,request, pk):
+    def get(self, request, pk):
         print(pk)
         event = Event.objects.get(pk=pk)
         bookingset = Booking.objects.filter(event=event)
         events = BookingSerializer(bookingset, many=True)
         queryset = Event.objects.all()
         return Response(events.data)
-
