@@ -1,7 +1,5 @@
 from .views import RegisterView, LoginAPIView
-# from rest_framework_simplejwt.views import TokenRefreshView
 from django.urls import path, include
-# from django.contrib.auth.models import User
 from rest_framework import routers
 from knox import views as knox_views
 
