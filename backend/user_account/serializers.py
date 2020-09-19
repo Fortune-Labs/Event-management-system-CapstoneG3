@@ -1,8 +1,8 @@
-
 from rest_framework import serializers
 from .models import Account
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
+import re
 
 
 class RegisterSerializer(serializers.ModelSerializer):
@@ -21,14 +21,33 @@ class RegisterSerializer(serializers.ModelSerializer):
         username = attrs.get('username', '')
         password = attrs.get('password', '')
         confirm_password = attrs.get('confirm_password', '')
+        phone = attrs.get('phone', '')
 
+        # Validates that the content of password field and confirm password field must match
         if password != confirm_password:
             raise serializers.ValidationError(
                 {'password': 'Password must match.'})
 
+        # Validates that username field should contain alphanumeric characters
         if not username.isalnum():
             raise serializers.ValidationError(
                 'The username should only contain alphanumeric characters')
+
+        # Validates that phone field should only take numeric characters
+        if re.findall('[a-zA-Z\?!@#$%&()`~}{*+_^><.,|\-]', phone):
+            raise serializers.ValidationError(
+                'The phone should only contain only numeric characters')
+
+        # Validates that password must contain at least one numeric character
+        if not re.findall('\d', password):
+            raise serializers.ValidationError(
+                "The password must contain at least 1 digit, 0-9.")
+
+        # Validates that password must be at least 6 characters long
+        if len(password) < 6:
+            raise serializers.ValidationError(
+                "Password must be at least 6 characters")
+
         return attrs
 
     def create(self, validated_data):
@@ -56,9 +75,6 @@ class LoginSerializer(serializers.ModelSerializer):
             raise AuthenticationFailed('Invalid credentials, try again')
         if not user.is_active:
             raise AuthenticationFailed('Account disabled, contact admin')
-
-        # if not user.is_verified:
-        #     raise AuthenticationFailed('Email is not verified')
 
         return {
             'email': user.email,

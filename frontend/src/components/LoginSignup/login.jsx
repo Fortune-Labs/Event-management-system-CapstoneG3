@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 class Login extends Component {
   state = {
@@ -20,7 +21,7 @@ class Login extends Component {
 
   handleSubmit = async () => {
     this.setState({ IsSubmitted: true });
-    let url = "http://127.0.0.1:8000/login/";
+    let url = "http://127.0.0.1:8000/api/login/";
     let formdata = {
       email: this.state.email,
       password: this.state.password,
@@ -44,6 +45,9 @@ class Login extends Component {
   };
 
   render() {
+    if (this.state.IsSubmitted) {
+      return <Redirect to="/initial" />;
+    }
     return (
       <div className="login-wrapper">
         <div className="login-form-wrapper">
@@ -79,7 +83,6 @@ class Login extends Component {
                 <button className="" type="submit">
                   Login
                 </button>
-                {/* {this.initialEvent()} */}
               </div>
             </div>
             <div>

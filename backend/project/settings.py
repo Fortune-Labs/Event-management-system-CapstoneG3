@@ -26,7 +26,7 @@ SECRET_KEY = '%b!8(2u-@#%bu)gf%$9q@)4!aoi)no-k$5-8+++s1%@34o$xbp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["137.117.35.157", '127.0.0.1']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'user_account',
     'djoser',
-    'event'
+    'event',
+    'knox'
 
 ]
 
@@ -95,7 +96,9 @@ REST_FRAMEWORK = {
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_AUTHENTICATION_CLASSES': (
 
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
     ),
 }
 
@@ -144,9 +147,4 @@ STATICFILES_DIRS = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000"
-]
-
-
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
 ]
