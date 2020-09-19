@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import "./style.css";
 import ErrorMessage from "./errorMessages";
 import { Link, useHistory } from "react-router-dom";
+// import { Redirect } from "react-router";
+// import history from "../Events/initial";
 
 //Regular expression that holds email validation of form example@thismail.com
 const emailRegex = RegExp(

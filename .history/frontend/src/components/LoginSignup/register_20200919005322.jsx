@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import "./style.css";
 import ErrorMessage from "./errorMessages";
 import { Link, useHistory } from "react-router-dom";
+// import { Redirect } from "react-router";
+// import history from "../Events/initial";
 
 //Regular expression that holds email validation of form example@thismail.com
 const emailRegex = RegExp(
@@ -10,13 +12,12 @@ const emailRegex = RegExp(
 );
 //Regular expression that holds phone number validation of form (000-000-0000)
 const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+const history = useHistory();
 
 const UseFormFuction = () => {
   const { register, handleSubmit, errors, watch } = useForm();
   const password = useRef({});
   password.current = watch("password", "");
-  const history = useHistory();
-
   const onSubmit = (formData) => {
     console.log(formData);
 
