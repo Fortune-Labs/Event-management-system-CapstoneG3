@@ -17,14 +17,14 @@ const UseFormFuction = () => {
   password.current = watch("password", "");
   const history = useHistory();
 
-  const onSubmit = async (formData) => {
+  const onSubmit = (formData) => {
     console.log(formData);
 
     let url = "http://127.0.0.1:8000/api/register/";
-    await fetch(url, {
+    fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-type": "application/json",
       },
       body: JSON.stringify(formData),
     })
@@ -38,9 +38,6 @@ const UseFormFuction = () => {
       });
   };
 
-  function initialPage() {
-    document.location.href = "/initial";
-  }
   return (
     <div className="wrapper">
       <div className="form-wrapper">
@@ -49,7 +46,7 @@ const UseFormFuction = () => {
           <div className="firstName">
             <input
               type="text"
-              name="firstName"
+              name="first_name"
               ref={register({ required: true, minLength: 3 })}
               placeholder="Enter First Name"
             />
@@ -58,7 +55,7 @@ const UseFormFuction = () => {
           <div className="lastName">
             <input
               type="text"
-              name="lastName"
+              name="last_name"
               ref={register({ required: true, minLength: 3 })}
               placeholder="Enter Last name"
             />
@@ -91,7 +88,7 @@ const UseFormFuction = () => {
           <div className="cpassword">
             <input
               type="password"
-              name="cpassword"
+              name="confirm_password"
               ref={register({
                 required: true,
                 validate: (value) =>
@@ -99,7 +96,7 @@ const UseFormFuction = () => {
               })}
               placeholder="Confirm Password"
             />
-            <ErrorMessage error={errors.cpassword} />
+            <ErrorMessage error={errors.confirm_password} />
           </div>
           <div className="username">
             <input
