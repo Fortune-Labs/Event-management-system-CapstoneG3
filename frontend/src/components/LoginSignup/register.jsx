@@ -21,10 +21,10 @@ const UseFormFuction = () => {
     console.log(formData);
 
     let url = "http://127.0.0.1:8000/api/register/";
-    await fetch(url, {
+    fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-type": "application/json",
       },
       body: JSON.stringify(formData),
     })
@@ -38,9 +38,6 @@ const UseFormFuction = () => {
       });
   };
 
-  function initialPage() {
-    document.location.href = "/initial";
-  }
   return (
     <div className="wrapper">
       <div className="form-wrapper">
