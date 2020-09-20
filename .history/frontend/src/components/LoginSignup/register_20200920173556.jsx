@@ -1,6 +1,7 @@
 import React, { useRef, Component } from "react";
 import { useForm } from "react-hook-form";
 import "./style.css";
+import "../Home/style.css";
 import ErrorMessage from "./errorMessages";
 import { Link, useHistory } from "react-router-dom";
 
