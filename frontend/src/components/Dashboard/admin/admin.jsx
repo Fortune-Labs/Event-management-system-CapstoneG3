@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
@@ -15,7 +15,7 @@ import logo from "assets/img/react-logo.png";
 
 var ps;
 
-class Admin extends React.Component {
+class Admin extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -110,7 +110,7 @@ class Admin extends React.Component {
             ref="mainPanel"
             data={this.state.backgroundColor}
           >
-            <AdminNavbar
+            <Navbar
               {...this.props}
               brandText={this.getBrandText(this.props.location.pathname)}
               toggleSidebar={this.toggleSidebar}
@@ -128,7 +128,7 @@ class Admin extends React.Component {
             }
           </div>
         </div>
-        <FixedPlugin
+        <Plugin
           bgColor={this.state.backgroundColor}
           handleBgClick={this.handleBgClick}
         />

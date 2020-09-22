@@ -2,7 +2,7 @@ import React, { useRef, Component } from "react";
 import { useForm } from "react-hook-form";
 import "./style.css";
 import ErrorMessage from "./errorMessages";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 //Regular expression that holds email validation of form example@thismail.com
 const emailRegex = RegExp(
@@ -15,6 +15,8 @@ const UseFormFuction = () => {
   const { register, handleSubmit, errors, watch } = useForm();
   const password = useRef({});
   password.current = watch("password", "");
+  const history = useHistory();
+
   const onSubmit = (formData) => {
     console.log(formData);
 
@@ -22,31 +24,40 @@ const UseFormFuction = () => {
     fetch(url, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-type": "application/json",
       },
       body: JSON.stringify(formData),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("success", data);
+        console.log("Registered Sucessfully", data);
+        history.push("/initial");
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   };
 
-  function initialPage() {
-    document.location.href = "/initial";
-  }
   return (
     <div className="wrapper">
+      <div className="header-bar">
+        {/*   <div className="logo">
+            <a>
+              <img src="../Images/eventlogo.jpg" alt="#" />
+              CapstoneG3
+            </a>
+          </div> */}
+        <Link to="home">Home</Link>
+        <Link to="about">About</Link>
+        <Link to="Login">Login</Link>
+      </div>
       <div className="form-wrapper">
         <form onSubmit={handleSubmit(onSubmit)} className="register-form">
           <h1 className="register-header">Registration</h1>
           <div className="firstName">
             <input
               type="text"
-              name="firstName"
+              name="first_name"
               ref={register({ required: true, minLength: 3 })}
               placeholder="Enter First Name"
             />
@@ -55,7 +66,7 @@ const UseFormFuction = () => {
           <div className="lastName">
             <input
               type="text"
-              name="lastName"
+              name="last_name"
               ref={register({ required: true, minLength: 3 })}
               placeholder="Enter Last name"
             />
@@ -88,7 +99,7 @@ const UseFormFuction = () => {
           <div className="cpassword">
             <input
               type="password"
-              name="cpassword"
+              name="confirm_password"
               ref={register({
                 required: true,
                 validate: (value) =>
@@ -96,7 +107,7 @@ const UseFormFuction = () => {
               })}
               placeholder="Confirm Password"
             />
-            <ErrorMessage error={errors.cpassword} />
+            <ErrorMessage error={errors.confirm_password} />
           </div>
           <div className="username">
             <input
