@@ -26,7 +26,7 @@ SECRET_KEY = '%b!8(2u-@#%bu)gf%$9q@)4!aoi)no-k$5-8+++s1%@34o$xbp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["137.117.35.157", '127.0.0.1']
+ALLOWED_HOSTS = ["137.117.35.157", "127.0.0.1", "192.168.56.1"]
 
 
 # Application definition
@@ -146,5 +146,6 @@ STATICFILES_DIRS = [
 
 
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "http://192.168.56.1:3000"
 ]
