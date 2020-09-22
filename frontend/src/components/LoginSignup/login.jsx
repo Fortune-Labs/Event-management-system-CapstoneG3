@@ -22,7 +22,7 @@ class Login extends Component {
 
   handleSubmit = async () => {
     this.setState({ IsSubmitted: true });
-    let url = "http://127.0.0.1:8000/login/";
+    let url = "http://127.0.0.1:8000/api/login/";
     let formdata = {
       email: this.state.email,
       password: this.state.password,

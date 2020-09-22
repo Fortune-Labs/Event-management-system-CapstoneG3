@@ -3,6 +3,7 @@
 # Create your tests here.
 from django.test import TestCase
 from django.urls import reverse
+from user_account.models import Account
 
 
 class BaseTest(TestCase):
@@ -70,7 +71,6 @@ class RegisterTest(BaseTest):
             self.register_url, self.user, format='text/html')
         self.assertEqual(response.status_code, 400)
 
-    
     class LoginTest(BaseTest):
         def test_login_success(self):
             self.client.post(self.register_url, self.user, format='text')
@@ -92,5 +92,5 @@ class RegisterTest(BaseTest):
 
         def test_cantlogin_with_no_password(self):
             response = self.client.post(
-                self.login_url, {'username': 'passwped', 'password': ''}, format='text/html')
+                self.login_url, {'username': 'passwped', 'password': ''}, format='text')
             self.assertEqual(response.status_code, 400)
