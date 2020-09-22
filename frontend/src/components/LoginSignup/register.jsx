@@ -18,7 +18,7 @@ const UseFormFuction = () => {
   const onSubmit = (formData) => {
     console.log(formData);
 
-    let url = "http://127.0.0.1:8000/auth/register/";
+    let url = "http://127.0.0.1:8000/api/register/";
     fetch(url, {
       method: "POST",
       headers: {

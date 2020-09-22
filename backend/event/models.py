@@ -2,6 +2,8 @@ from django.db import models
 from user_account.models import Account
 
 # Events Module
+
+
 class Event(models.Model):
     topic = models.CharField(max_length=100)
     TIMES = (
@@ -18,6 +20,8 @@ class Event(models.Model):
         return self.topic
 
 # Booking Module
+
+
 class Booking(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE, null=True)
     user = models.ForeignKey(
