@@ -1,19 +1,14 @@
 .wrapper {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: url("../Images/login-background.jpg");
   display: flex;
-  position: absolute;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f2f2f2;
   margin: 0;
   top: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
 }
 
 .header-bar {
@@ -56,8 +51,8 @@
 }
 
 .form-wrapper {
-  min-height: 30rem;
-  width: 35%;
+  min-height: 25rem;
+  width: 30%;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -199,21 +194,21 @@ input::placeholder {
   width: 100%;
   display: flex;
   flex-direction: column;
-  position: absolute;
   justify-content: center;
   align-items: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f2f2f2;
-  background-position: center center;
   margin: 0;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  position: relative;
 }
 
+.login-wrapper {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
 .login-form-wrapper {
   height: 60%;
   width: 50%;

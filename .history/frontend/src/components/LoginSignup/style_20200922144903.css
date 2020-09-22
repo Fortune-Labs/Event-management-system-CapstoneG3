@@ -56,8 +56,8 @@
 }
 
 .form-wrapper {
-  min-height: 30rem;
-  width: 35%;
+  min-height: 25rem;
+  width: 30%;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -206,7 +206,6 @@ input::placeholder {
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f2f2f2;
-  background-position: center center;
   margin: 0;
   top: 0;
   right: 0;
