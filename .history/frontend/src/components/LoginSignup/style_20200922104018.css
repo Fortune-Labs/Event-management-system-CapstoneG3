@@ -204,9 +204,6 @@ input::placeholder {
   position: relative;
 }
 
-.login-wrapper {
-  height: 100%;
-}
 .login-form-wrapper {
   height: 60%;
   width: 50%;
