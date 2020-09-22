@@ -67,9 +67,7 @@
 }
 
 form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 20px;
 }
 
 .register-header {
