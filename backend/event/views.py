@@ -78,6 +78,8 @@ class EventsBookedByUser(APIView):
 
 
 class EventAttendees(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, pk):
         print(pk)
         event = Event.objects.get(pk=pk)
