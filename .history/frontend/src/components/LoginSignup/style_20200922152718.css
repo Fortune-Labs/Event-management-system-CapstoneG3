@@ -66,6 +66,12 @@
   background-color: #ffffff;
 }
 
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .register-header {
   text-align: center;
   width: 100%;
