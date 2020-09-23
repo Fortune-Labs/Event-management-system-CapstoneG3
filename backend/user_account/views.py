@@ -9,15 +9,17 @@ from .models import Account
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from django.contrib.auth import login
 from knox.views import LoginView as KnoxLoginView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 # Create your views here.
 # from django.shortcuts import render
 
 
+# class RegisterView(generics.GenericAPIView):
+
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def post(self, request):
         print("request received")
@@ -42,7 +44,7 @@ class RegisterView(generics.GenericAPIView):
 
 
 class LoginAPIView(KnoxLoginView):
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def post(self, request, format=None):
         serializer = AuthTokenSerializer(data=request.data)

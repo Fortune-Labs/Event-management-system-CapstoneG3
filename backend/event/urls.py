@@ -21,5 +21,6 @@ urlpatterns = [
     path('userevents/<pk>/', views.EventsBookedByUser.as_view()),
     # Url for viewing respective event attendees
     path('eventattendees/<pk>/', views.EventAttendees.as_view()),
+    # Url for viewing count of all events created
     path('eventcountview/', views.EventCountView.as_view()),
 ]
