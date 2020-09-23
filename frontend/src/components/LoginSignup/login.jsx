@@ -82,21 +82,22 @@ class Login extends Component {
             </div>
 
             <div className="login">
-              <div className="reset-pwd">
+              {/* <div className="reset-pwd">
                 <Link to="/passwordReset" className="forgot">
                   Forgot password?
                 </Link>
-              </div>
+              </div> */}
               <div className="btn">
                 <button className="" type="submit">
                   Login
                 </button>
               </div>
-            </div>
-            <div>
-              <small>
-                Don't Have an Account? <Link to="register">Register Here</Link>
-              </small>
+              <div>
+                <small>
+                  Don't Have an Account?
+                  <Link to="register">Register Here</Link>
+                </small>
+              </div>
             </div>
           </form>
         </div>
