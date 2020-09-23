@@ -13,13 +13,17 @@ const emailRegex = RegExp(
 const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 
 const UseFormFuction = () => {
-  const { register, handleSubmit, errors, watch } = useForm();
+  const { register, handleSubmit, watch, errors } = useForm();
   const password = useRef({});
   password.current = watch("password", "");
   const history = useHistory();
 
   const onSubmit = (formData) => {
+    // e.preventDefault();
     console.log(formData);
+    // alert(`SheThank you ${formData.name} for registration`);
+    /* reset();
+    console.log(formData); */
 
     let url = "http://127.0.0.1:8000/api/register/";
     fetch(url, {
@@ -56,17 +60,17 @@ const UseFormFuction = () => {
 
   return (
     <div className="wrapper">
-      <div className="header-bar">
-        {/*   <div className="logo">
+      {/*  <div className="header-bar">
+          <div className="logo">
             <a>
               <img src="../Images/eventlogo.jpg" alt="#" />
               CapstoneG3
             </a>
-          </div> */}
-        <Link to="home">Home</Link>
+          </div>
+        <Link to="/">Home</Link>
         <Link to="about">About</Link>
         <Link to="Login">Login</Link>
-      </div>
+      </div> */}
       <div className="form-wrapper">
         <form onSubmit={handleSubmit(onSubmit)} className="register-form">
           <h1 className="register-header">Registration</h1>

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import EventCreate, BookingView, EventView, BookedEventsView, EventsBookedByUser
+from .views import EventCreate, BookingView, EventView, BookedEventsView, EventsBookedByUser, EventCountView
 
 from django.urls import path
 from rest_framework import serializers
@@ -21,4 +21,5 @@ urlpatterns = [
     path('userevents/<pk>/', views.EventsBookedByUser.as_view()),
     # Url for viewing respective event attendees
     path('eventattendees/<pk>/', views.EventAttendees.as_view()),
+    path('eventcountview/', views.EventCountView.as_view()),
 ]

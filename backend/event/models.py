@@ -5,7 +5,7 @@ from user_account.models import Account
 
 
 class Event(models.Model):
-    topic = models.CharField(max_length=100)
+    topic = models.CharField(max_length=100, unique=True)
     TIMES = (
         ('Morning', 'Morning'),
         ('Midmorning', 'Midmorning'),
