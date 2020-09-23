@@ -13,10 +13,10 @@ class Home extends Component {
               CapstoneG3
             </a>
           </div> */}
-          <Link to="/">Home</Link>
+          <Link to="home">Home</Link>
           <Link to="initial">Event</Link>
           <Link to="Login">Login</Link>
-          <Link to="register">SignUp</Link>
+          <Link to="register">Sign Up</Link>
         </div>
         <div className="main">
           <div className="home-login">
