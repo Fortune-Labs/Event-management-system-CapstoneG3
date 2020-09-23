@@ -29,13 +29,23 @@ const UseFormFuction = () => {
       body: JSON.stringify(formData),
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log("Registered Sucessfully", data);
-        history.push("/initial");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+      .then((js) => console.log(js));
+
+    // fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(formData),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     console.log("Registered Sucessfully", data);
+    //     history.push("/initial");
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
   };
 
   return (
