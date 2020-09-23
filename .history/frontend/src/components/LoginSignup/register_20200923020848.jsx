@@ -18,11 +18,7 @@ const UseFormFuction = () => {
   const history = useHistory();
 
   const onSubmit = (formData) => {
-    // e.preventDefault();
     console.log(formData);
-    // alert(`SheThank you ${formData.name} for registration`);
-    /* reset();
-    console.log(formData); */
 
     let url = "http://127.0.0.1:8000/api/register/";
     fetch(url, {

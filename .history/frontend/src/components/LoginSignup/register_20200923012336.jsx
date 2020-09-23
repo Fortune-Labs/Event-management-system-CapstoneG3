@@ -12,17 +12,13 @@ const emailRegex = RegExp(
 const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 
 const UseFormFuction = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors, watch } = useForm();
   const password = useRef({});
   password.current = watch("password", "");
   const history = useHistory();
 
   const onSubmit = (formData) => {
-    // e.preventDefault();
     console.log(formData);
-    // alert(`SheThank you ${formData.name} for registration`);
-    /* reset();
-    console.log(formData); */
 
     let url = "http://127.0.0.1:8000/api/register/";
     fetch(url, {
