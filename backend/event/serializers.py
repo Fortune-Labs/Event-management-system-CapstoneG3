@@ -22,10 +22,10 @@ class BookingSerializer(serializers.ModelSerializer):
             )
         ]
 
-    # Validation of room capacity against booked seats
-    def validate_event(self, value):
-        if value:
-            if value.room_capacity <= Booking.objects.count():
-                raise serializers.ValidationError(
-                    {"Fully Booked": "All seats have been allocated"})
-        return value
+    # # Validation of room capacity against booked seats
+    # def validate_event(self, value):
+    #     if value:
+    #         if Booking.objects.count() >= value.room_capacity:
+    #             raise serializers.ValidationError(
+    #                 {"Fully Booked": "All seats have been allocated"})
+    #     return value

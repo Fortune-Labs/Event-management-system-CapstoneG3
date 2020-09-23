@@ -34,6 +34,7 @@ class EventCreate(generics.GenericAPIView):
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+    permission_classes = [IsAuthenticated]
 
 # Events booking view
 
@@ -58,11 +59,14 @@ class BookingView (generics.ListCreateAPIView):
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    permission_classes = [IsAuthenticated]
 
 # User's view of all events booked
 
 
 class EventsBookedByUser(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, pk, format=None):
         try:
             u = Account.objects.get(pk=pk)
@@ -87,3 +91,14 @@ class EventAttendees(APIView):
         events = BookingSerializer(bookingset, many=True)
         queryset = Event.objects.all()
         return Response(events.data)
+
+
+class EventCountView(generics.GenericAPIView):
+    serializer_class = EventSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        event = Event.objects.all()
+        count = event.__len__()
+        serializer = EventSerializer(event, many=True)
+        return Response({"count": count, "data": serializer.data})
