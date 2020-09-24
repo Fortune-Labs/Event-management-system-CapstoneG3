@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Button, ListGroup } from "react-bootstrap";
-import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 export default class Events extends Component {
   state = {
     events: [],
@@ -16,10 +14,10 @@ export default class Events extends Component {
         (result) => {
           console.log("responsee from server", result);
           this.setState({
-            isLoaded: true,
+            isLoaded: false,
             events: result,
           });
-        },
+        }
         (error) => {
           this.setState({
             isLoaded: true,
@@ -39,29 +37,26 @@ export default class Events extends Component {
     } else {
       console.log(events);
       return (
-        <div className="row">
-          <div className="header-bar">
-            {/*   <div className="logo">
-            <a>
-              <img src="../Images/eventlogo.jpg" alt="#" />
-              CapstoneG3
-            </a>
-          </div> */}
-            <Link to="/">Home</Link>
-            <Link to="initial">Event</Link>
-          </div>
-          {events.map((event) => (
-            <Card className="col-md-3 col-sm-5 col-xs-6">
-              <Card.Body>
+        <div
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            height: "700px",
+            width: "80%",
+            marginLeft: "10%",
+          }}
+        >
+          <ul>
+            {events.map((event) => (
+              <li key={event.id}>
                 <h3>{event.topic}</h3>
                 <p>{event.time}</p>
                 <p>{event.speaker}</p>
                 <p>{event.room_capacity}</p>
                 <p>{event.tagline}</p>
-                <Button variant="primary">Book</Button>
-              </Card.Body>
-            </Card>
-          ))}
+              </li>
+            ))}
+          </ul>
         </div>
       );
     }
