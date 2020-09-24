@@ -19,7 +19,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request):
         print("request received")
@@ -34,8 +34,8 @@ class RegisterView(generics.GenericAPIView):
 
 
 class LoginAPIView(KnoxLoginView):
-    # permission_classes = (permissions.AllowAny,)
-    permission_classes = [IsAuthenticated]
+    permission_classes = (permissions.AllowAny,)
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request, format=None):
         serializer = AuthTokenSerializer(data=request.data)
