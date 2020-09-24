@@ -25,8 +25,12 @@ function App() {
             component={Register}
           />
           <Route exact path="/initial" component={Initial} />
+<<<<<<< HEAD
+          {/* <Route exact path="/eventForm" component={eventForm} /> */}
+=======
           <Route exact path="/event-book" component={Eventbook} />
           <Route exact path="/events" component={Events} />
+>>>>>>> Legend
         </Switch>
       </BrowserRouter>
     </div>
