@@ -34,7 +34,19 @@ class EventCreate(generics.GenericAPIView):
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
+<<<<<<< HEAD
+# <<<<<<< HEAD
+# <<<<<<< HEAD
+    permission_classes = [IsAuthenticated]
+# =======
     # permission_classes = [IsAuthenticated]
+# >>>>>>> development
+# =======
+    # permission_classes = [IsAuthenticated]
+# >>>>>>> 7be8aea3078e752b85b7170ebf1968081f8cc448
+=======
+    # permission_classes = [IsAuthenticated]
+>>>>>>> 390fdc241e8dc63463ca83304dbacb9ade97081a
 
 # Events booking view
 
