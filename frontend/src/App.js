@@ -1,12 +1,17 @@
 import React from "react";
 // import "./App.css";
+// import PasswordReset from "./components/LoginSignup/passwordReset";
 import Register from "./components/LoginSignup/register";
 import Login from "./components/LoginSignup/login";
-import PasswordReset from "./components/LoginSignup/passwordReset";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/home";
 import Initial from "./components/Events/initial";
+<<<<<<< HEAD
 // import eventForm from "./components/Events/eventForm.jsx";
+=======
+import Eventbook from "./components/Events/event-book";
+import Events from "./components/Events/events";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+>>>>>>> Legend
 // import user from "./components/Dashboard/user";
 
 function App() {
@@ -16,7 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" name="Home" component={Home} />
           <Route exact path="/login" name="Login Page" component={Login} />
-          <Route exact path="/passwordReset" component={PasswordReset} />
+          {/* <Route exact path="/passwordReset" component={PasswordReset} /> */}
           <Route
             exact
             path="/register"
@@ -24,7 +29,12 @@ function App() {
             component={Register}
           />
           <Route exact path="/initial" component={Initial} />
+<<<<<<< HEAD
           {/* <Route exact path="/eventForm" component={eventForm} /> */}
+=======
+          <Route exact path="/event-book" component={Eventbook} />
+          <Route exact path="/events" component={Events} />
+>>>>>>> Legend
         </Switch>
       </BrowserRouter>
     </div>
