@@ -24,7 +24,7 @@ function App() {
             component={Register}
           />
           <Route exact path="/initial" component={Initial} />
-          {/* <Route exact path="/eventForm" component={eventForm} /> */}
+          <Route exact path="/eventForm" component={eventForm} />
         </Switch>
       </BrowserRouter>
     </div>
