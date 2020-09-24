@@ -16,7 +16,6 @@ class EventSerializer(serializers.ModelSerializer):
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        depth = 1
         exclude = []
         validators = [
             UniqueTogetherValidator(
