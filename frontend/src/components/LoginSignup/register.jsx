@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import "./style.css";
 import ErrorMessage from "./errorMessages";
 import { Link, useHistory } from "react-router-dom";
+import { Redirect } from "react-router";
 
 //Regular expression that holds email validation of form example@thismail.com
 const emailRegex = RegExp(
@@ -31,15 +32,30 @@ const UseFormFuction = () => {
         "Content-type": "application/json",
       },
       body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Registered Sucessfully", data);
-        history.push("/initial");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    }).then((response) => {
+      if (response.status === 201) {
+        console.log("Registered successfully", response);
+        history.push("/login");
+      } else {
+        // const error = await response.json()
+        alert("Unable to register");
+      }
+
+      // fetch(url, {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-type": "application/json",
+      //   },
+      //   body: JSON.stringify(formData),
+      // })
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     console.log("Registered Sucessfully", data);
+      //     history.push("/initial");
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error:", error);
+    });
   };
 
   return (
@@ -96,7 +112,7 @@ const UseFormFuction = () => {
               type="password"
               name="password"
               placeholder="Password"
-              ref={register({ required: true, maxLength: 8 })}
+              ref={register({ required: true, minLength: 6 })}
             />
             <ErrorMessage error={errors.password} />
           </div>

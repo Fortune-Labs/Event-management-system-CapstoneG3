@@ -6,6 +6,7 @@ import PasswordReset from "./components/LoginSignup/passwordReset";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/home";
 import Initial from "./components/Events/initial";
+import eventForm from "./components/Events/eventForm.jsx";
 // import user from "./components/Dashboard/user";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             component={Register}
           />
           <Route exact path="/initial" component={Initial} />
+          <Route exact path="/eventForm" component={eventForm} />
         </Switch>
       </BrowserRouter>
     </div>
