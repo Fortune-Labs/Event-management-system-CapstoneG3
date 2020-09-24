@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 export default class Events extends Component {
   state = {
     events: [],
@@ -49,6 +48,8 @@ export default class Events extends Component {
           </div> */}
             <Link to="/">Home</Link>
             <Link to="initial">Event</Link>
+            <Link to="Login">Login</Link>
+            <Link to="register">SignUp</Link>
           </div>
           {events.map((event) => (
             <Card className="col-md-3 col-sm-5 col-xs-6">

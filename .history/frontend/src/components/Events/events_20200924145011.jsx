@@ -49,9 +49,11 @@ export default class Events extends Component {
           </div> */}
             <Link to="/">Home</Link>
             <Link to="initial">Event</Link>
+            <Link to="Login">Login</Link>
+            <Link to="register">SignUp</Link>
           </div>
           {events.map((event) => (
-            <Card className="col-md-3 col-sm-5 col-xs-6">
+            <Card className="col-md-3 col-sm-5 col-xs-6 ml-2">
               <Card.Body>
                 <h3>{event.topic}</h3>
                 <p>{event.time}</p>
