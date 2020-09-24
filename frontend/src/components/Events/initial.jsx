@@ -49,7 +49,7 @@ class Initial extends Component {
                     make your event come alive. Click view details below to
                     begin.
                   </p>
-                  <Link to="/event-book">View Details</Link>
+                  <Link to="/event-book">Book Event</Link>
                 </div>
               </li>
             </ul>
