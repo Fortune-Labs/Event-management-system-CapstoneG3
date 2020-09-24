@@ -28,7 +28,6 @@ class Initial extends Component {
                 <div className="details">
                   <h3>Centralize Event Management</h3>
                   <p>
-                    {" "}
                     Eliminate time-consuming tasks and streamline events
                     management by leveraging the array of tools available in our
                     integrated event software platform.
@@ -49,7 +48,7 @@ class Initial extends Component {
                     make your event come alive. Click view details below to
                     begin.
                   </p>
-                  <Link to="/event-book">View Details</Link>
+                  <Link to="/event-book">Book Event</Link>
                 </div>
               </li>
             </ul>

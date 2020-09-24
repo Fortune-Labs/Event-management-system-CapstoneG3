@@ -1,6 +1,7 @@
 /* Event booking styles */
 
-.event-book-wrapper {
+.event-book-wrapper,
+.event-create-wrapper {
   height: 100vh;
   width: 100%;
   background-image: url("../Images/login-background.jpg");
@@ -13,7 +14,8 @@
   margin: 0;
 }
 
-.event-book-form-wrapper {
+.event-book-form-wrapper,
+.event-create-form-wrapper {
   min-height: 30rem;
   width: 35%;
   display: flex;
