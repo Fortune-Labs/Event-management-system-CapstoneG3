@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 export default class Events extends Component {
   state = {
     events: [],
@@ -53,7 +52,7 @@ export default class Events extends Component {
             <Link to="register">SignUp</Link>
           </div>
           {events.map((event) => (
-            <Card className="col-md-3 col-sm-5 col-xs-6 m-2">
+            <Card className="col-md-3 col-sm-5 col-xs-6">
               <Card.Body>
                 <h3>{event.topic}</h3>
                 <p>{event.time}</p>
