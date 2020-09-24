@@ -59,7 +59,7 @@ class BookingView (generics.ListCreateAPIView):
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
 # User's view of all events booked
 

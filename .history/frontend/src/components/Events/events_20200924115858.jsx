@@ -4,7 +4,6 @@ export default class Events extends Component {
   state = {
     events: [],
     isLoaded: false,
-    error: null,
   };
 
   componentDidMount() {
@@ -12,7 +11,6 @@ export default class Events extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log("responsee from server", result);
           this.setState({
             isLoaded: true,
             events: result,
@@ -28,14 +26,13 @@ export default class Events extends Component {
   }
 
   render() {
-    const { error, isLoaded, events } = this.state;
+    const { error, isLoaded, items } = this.state;
     if (error) {
       return <div>Error: {error.message}</div>;
-    }
-    if (!isLoaded) {
+    } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      console.log(events);
+      console.log(this.state.items);
       return (
         <div
           style={{
@@ -47,13 +44,12 @@ export default class Events extends Component {
           }}
         >
           <ul>
-            {events.map((event) => (
-              <li key={event.id}>
-                <h3>{event.topic}</h3>
-                <p>{event.time}</p>
-                <p>{event.speaker}</p>
-                <p>{event.room_capacity}</p>
-                <p>{event.tagline}</p>
+            {items.map((item) => (
+              <li key={item.id}>
+                <h3>{item.name}</h3>
+                <p>{item.event}</p>
+                <p>{item.email}</p>
+                <p>{item.number}</p>
               </li>
             ))}
           </ul>

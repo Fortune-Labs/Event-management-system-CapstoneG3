@@ -17,7 +17,7 @@ export default class Events extends Component {
             isLoaded: true,
             events: result,
           });
-        },
+        }
         (error) => {
           this.setState({
             isLoaded: true,

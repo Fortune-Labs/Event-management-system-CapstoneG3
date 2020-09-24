@@ -12,7 +12,6 @@ export default class Events extends Component {
       .then((res) => res.json())
       .then(
         (result) => {
-          console.log("responsee from server", result);
           this.setState({
             isLoaded: true,
             events: result,

@@ -14,10 +14,10 @@ export default class Events extends Component {
         (result) => {
           console.log("responsee from server", result);
           this.setState({
-            isLoaded: true,
+            isLoaded: false,
             events: result,
           });
-        },
+        }
         (error) => {
           this.setState({
             isLoaded: true,
