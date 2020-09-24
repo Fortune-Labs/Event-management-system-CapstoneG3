@@ -36,7 +36,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         # Validates that phone field should only take numeric characters
         if re.findall('[a-zA-Z\?!@#$%&()`~}{*+_^><.,|\-]', phone):
             raise serializers.ValidationError(
-                'The phone should only contain only numeric characters')
+                'The phone should only contain numeric characters')
 
         # Validates that password must contain at least one numeric character
         if not re.findall('\d', password):

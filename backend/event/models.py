@@ -5,7 +5,7 @@ from user_account.models import Account
 
 
 class Event(models.Model):
-    topic = models.CharField(max_length=100)
+    topic = models.CharField(max_length=100, unique=True)
     TIMES = (
         ('Morning', 'Morning'),
         ('Midmorning', 'Midmorning'),
@@ -18,6 +18,7 @@ class Event(models.Model):
 
     def __str__(self):
         return self.topic
+
 
 # Booking Module
 
@@ -38,3 +39,6 @@ class Booking(models.Model):
 
     def __str__(self):
         return str(self.user) + " For " + str(self.event)
+
+    class Meta:
+        unique_together = ('event', 'time', 'user')

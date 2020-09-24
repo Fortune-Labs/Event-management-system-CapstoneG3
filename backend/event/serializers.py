@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from rest_framework.validators import UniqueTogetherValidator
 
 from event.models import Event, Booking
 
@@ -8,18 +9,32 @@ class EventSerializer(serializers.ModelSerializer):
         model = Event
         exclude = []
 
+
 # Event Booking Serilaizer
 
 
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
+        depth = 1
         exclude = []
+        validators = [
+            UniqueTogetherValidator(
+                queryset=Booking.objects.all(),
+                fields=['user', 'time', 'event'],
+                message="Already booked an Event at the same time! Kindly select a different time."
+            )
 
-    # Validation of room capacity against booked seats
-    def validate_event(self, value):
-        if value:
-            if value.room_capacity <= Booking.objects.count():
+        ]
+
+    def validate(self, attr):
+
+        time = attr.get("time", None)
+        event = attr.get("event", None)
+
+        if event:
+
+            if event.room_capacity <= Booking.objects.filter(event=event, time=time).count():
                 raise serializers.ValidationError(
-                    {"Fully Booked": "All seats have been allocated"})
-        return value
+                    {"Fully Booked": "All seated have been allocated for this session."})
+        return attr
