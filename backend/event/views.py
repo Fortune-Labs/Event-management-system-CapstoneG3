@@ -16,7 +16,7 @@ from knox.views import LoginView as KnoxLoginView
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = (IsAdminUser, IsAuthenticated)
+    # permission_classes = (IsAdminUser, IsAuthenticated)
 
     def post(self, request):
         event = request.data
@@ -82,7 +82,7 @@ class EventsBookedByUser(APIView):
 
 
 class EventAttendees(APIView):
-    permission_classes = (IsAdminUser, IsAuthenticated)
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         print(pk)
