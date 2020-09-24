@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import VerificationCode from "./verificationCode.jsx";
+import "./style.css";
 
 class PasswordReset extends Component {
   state = {
@@ -50,7 +51,7 @@ class PasswordReset extends Component {
               ></input>
               <span>{this.emailMessage()}</span>
             </div>
-            <div className="btn">
+            <div className="pwd-res-btn">
               <button className="" onClick={this.handleSubmit}>
                 Submit.
               </button>

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
-//import initial from "./Events/initial.jsx";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 class Login extends Component {
   state = {
-    email: "",
+    username: "",
     password: "",
     passedEmailIndicator: false,
     IsSubmitted: false,
@@ -19,11 +19,12 @@ class Login extends Component {
     }
   };
 
-  handleSubmit = async () => {
-    this.setState({ IsSubmitted: true });
-    let url = "http://127.0.0.1:8000/login/";
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    this.setState({ IsSubmitted: false });
+    let url = "http://127.0.0.1:8000/api/login/";
     let formdata = {
-      email: this.state.email,
+      username: this.state.username,
       password: this.state.password,
     };
     fetch(url, {
@@ -32,11 +33,15 @@ class Login extends Component {
         "Content-type": "application/json",
       },
       body: JSON.stringify(formdata),
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log("Logged in successfully", json);
-      });
+    }).then((response) => {
+      if (response.status === 200) {
+        console.log("Logged in successfully", response);
+        this.setState({ IsSubmitted: true });
+      } else {
+        // const error = await response.json()
+        alert("Unable to log in");
+      }
+    });
   };
 
   validEmail = (yesEmail) => {
@@ -45,6 +50,9 @@ class Login extends Component {
   };
 
   render() {
+    if (this.state.IsSubmitted) {
+      return <Redirect to="/initial" />;
+    }
     return (
       <div className="login-wrapper">
         <div className="login-form-wrapper">
@@ -54,9 +62,10 @@ class Login extends Component {
               <label>Email</label>
               <input
                 type="text"
-                name="email"
+                name="username"
                 placeholder="Enter Email"
                 onChange={this.onInputFieldChange}
+                value={this.state.username}
               ></input>
             </div>
 
@@ -66,27 +75,29 @@ class Login extends Component {
                 name="password"
                 type="password"
                 placeholder="Enter password"
+                onChange={this.onInputFieldChange}
+                value={this.state.password}
                 required
               ></input>
             </div>
 
             <div className="login">
-              <div className="reset-pwd">
+              {/* <div className="reset-pwd">
                 <Link to="/passwordReset" className="forgot">
                   Forgot password?
                 </Link>
-              </div>
+              </div> */}
               <div className="btn">
                 <button className="" type="submit">
                   Login
                 </button>
-                {/* {this.initialEvent()} */}
               </div>
-            </div>
-            <div>
-              <small>
-                Don't Have an Account? <Link to="register">Register Here</Link>
-              </small>
+              <div>
+                <small>
+                  Don't Have an Account?
+                  <Link to="register">Register Here</Link>
+                </small>
+              </div>
             </div>
           </form>
         </div>
