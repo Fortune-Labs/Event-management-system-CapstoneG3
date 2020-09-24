@@ -87,16 +87,16 @@ class Login extends Component {
                   Forgot password?
                 </Link>
               </div> */}
-              <div className="btn">
-                <button className="" type="submit">
-                  Login
-                </button>
-              </div>
-              <div>
+              <div className="dont-have-acc">
                 <small>
                   Don't Have an Account?
                   <Link to="register">Register Here</Link>
                 </small>
+              </div>
+              <div className="btn">
+                <button className="" type="submit">
+                  Login
+                </button>
               </div>
             </div>
           </form>
