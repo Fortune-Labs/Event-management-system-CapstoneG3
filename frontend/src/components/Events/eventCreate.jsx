@@ -1,32 +1,17 @@
-imrc;
+import React, { Component } from "react";
+import "./style.css";
+
 class EventCreate extends Component {
   state = {
     title: "",
   };
   render() {
     return (
-      <div>
-        <form action="">
-          <div>
-            Event title
-            <input name="title" type="text"></input>
-          </div>
-          <div>
-            Speaker
-            <input name="speaker" type="text"></input>
-          </div>
-          <div>
-            Location
-            <input name="location" type="text"></input>
-          </div>
-          <div>
-            Capacity
-            <input name="capacity" type="number"></input>
-          </div>
-
-          <div>
-            Date
-            <input name="date" type="date"></input>
+      <div lassName="event-create-wrapper">
+        <form className="event-create-form-wrapper">
+          <div className="topic">
+            Topic
+            <input name="topic" type="text"></input>
           </div>
 
           <div className="time">
@@ -36,6 +21,21 @@ class EventCreate extends Component {
               <option>Mid-morning</option>
               <option>Afternoon</option>
             </select>
+          </div>
+
+          <div className="speaker">
+            Speaker
+            <input name="speaker" type="text"></input>
+          </div>
+
+          <div className="capacity">
+            Room Capacity
+            <input name="capacity" type="number"></input>
+          </div>
+
+          <div className="tagline">
+            Tagline
+            <input name="tagline" type="text"></input>
           </div>
 
           <button>Create Event</button>

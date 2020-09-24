@@ -16,7 +16,7 @@ from knox.views import LoginView as KnoxLoginView
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = (IsAdminUser, IsAuthenticated)
+    # permission_classes = (IsAdminUser, IsAuthenticated)
 
     def post(self, request):
         event = request.data
@@ -34,7 +34,11 @@ class EventCreate(generics.GenericAPIView):
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [IsAuthenticated]
+<<<<<<< HEAD
+    # permission_classes = (IsAdminUser, IsAuthenticated)
+=======
+    # permission_classes = [IsAuthenticated]
+>>>>>>> 29e877fc88a02bab2f79f2e04c9a853893ecc1a2
 
 # Events booking view
 
@@ -42,7 +46,11 @@ class EventView(generics.ListAPIView):
 class BookingView (generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+<<<<<<< HEAD
+    # permission_classes = (IsAdminUser, IsAuthenticated)
+=======
+    # permission_classes = [IsAuthenticated]
+>>>>>>> 29e877fc88a02bab2f79f2e04c9a853893ecc1a2
 
     def post(self, request):
         book = request.data
@@ -59,7 +67,11 @@ class BookingView (generics.ListCreateAPIView):
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+<<<<<<< HEAD
+    # permission_classes = (IsAdminUser, IsAuthenticated)
+=======
+    # permission_classes = [IsAuthenticated]
+>>>>>>> 29e877fc88a02bab2f79f2e04c9a853893ecc1a2
 
 # User's view of all events booked
 
