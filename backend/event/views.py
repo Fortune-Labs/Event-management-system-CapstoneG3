@@ -5,7 +5,7 @@ from .serializers import EventSerializer, BookingSerializer
 from .models import Event, Booking
 from user_account.models import Account
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.authentication import BasicAuthentication
 from knox.auth import TokenAuthentication
 from knox.views import LoginView as KnoxLoginView
@@ -16,7 +16,7 @@ from knox.views import LoginView as KnoxLoginView
 class EventCreate(generics.GenericAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def post(self, request):
         event = request.data
@@ -34,7 +34,7 @@ class EventCreate(generics.GenericAPIView):
 class EventView(generics.ListAPIView):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
 # Events booking view
 
@@ -42,7 +42,7 @@ class EventView(generics.ListAPIView):
 class BookingView (generics.ListCreateAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def post(self, request):
         book = request.data
@@ -59,13 +59,13 @@ class BookingView (generics.ListCreateAPIView):
 class BookedEventsView(generics.ListAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
 # User's view of all events booked
 
 
 class EventsBookedByUser(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def get(self, request, pk, format=None):
         try:
@@ -82,7 +82,7 @@ class EventsBookedByUser(APIView):
 
 
 class EventAttendees(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def get(self, request, pk):
         print(pk)
@@ -95,10 +95,11 @@ class EventAttendees(APIView):
 
 class EventCountView(generics.GenericAPIView):
     serializer_class = EventSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
     def get(self, request, format=None):
         event = Event.objects.all()
         count = event.__len__()
         serializer = EventSerializer(event, many=True)
-        return Response({"count": count, "data": serializer.data})
+        return Response({"Number of Events": count})
+        # , "data": serializer.data

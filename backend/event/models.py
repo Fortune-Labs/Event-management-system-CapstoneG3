@@ -19,6 +19,7 @@ class Event(models.Model):
     def __str__(self):
         return self.topic
 
+
 # Booking Module
 
 
@@ -38,3 +39,6 @@ class Booking(models.Model):
 
     def __str__(self):
         return str(self.user) + " For " + str(self.event)
+
+    class Meta:
+        unique_together = ('event', 'time', 'user')
