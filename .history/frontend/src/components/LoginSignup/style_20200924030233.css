@@ -279,7 +279,7 @@ input::placeholder {
 .login {
   display: flex;
   flex-direction: row;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   width: 49%;
 }
 
@@ -319,6 +319,12 @@ input::placeholder {
 small {
   color: #999;
   font-weight: lighter;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  left: 0;
+  width: 50%;
 }
 
 /* general anchor tags */

@@ -279,7 +279,7 @@ input::placeholder {
 .login {
   display: flex;
   flex-direction: row;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   width: 49%;
 }
 
