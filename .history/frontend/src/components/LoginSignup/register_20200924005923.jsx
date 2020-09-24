@@ -32,7 +32,6 @@ const UseFormFuction = () => {
     }).then((response) => {
       if (response.status === 201) {
         console.log("Registered successfully", response);
-        alert("Account created succesfully, click ok to login");
         history.push("/login");
       } else {
         // const error = await response.json()
