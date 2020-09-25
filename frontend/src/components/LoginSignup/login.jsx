@@ -97,7 +97,7 @@ class Login extends Component {
               <input
                 name="password"
                 type="password"
-                placeholder="Enter password"
+                placeholder="Enter Password"
                 onChange={this.onInputFieldChange}
                 value={this.state.password}
                 required

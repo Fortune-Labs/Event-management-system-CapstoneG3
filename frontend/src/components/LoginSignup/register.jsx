@@ -90,7 +90,7 @@ const UseFormFuction = () => {
               type="text"
               name="last_name"
               ref={register({ required: true, minLength: 3 })}
-              placeholder="Enter Last name"
+              placeholder="Enter Last Name"
             />
             <ErrorMessage error={errors.lastName} />
           </div>
