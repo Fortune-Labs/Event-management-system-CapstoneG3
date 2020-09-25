@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
+import axios from "axios";
 
 class Login extends Component {
   state = {
@@ -19,7 +20,7 @@ class Login extends Component {
     }
   };
 
-  handleSubmit = async (e) => {
+  /* handleSubmit = async (e) => {
     e.preventDefault();
     this.setState({ IsSubmitted: false });
     let url = "http://127.0.0.1:8000/api/login/";
@@ -39,6 +40,28 @@ class Login extends Component {
         this.setState({ IsSubmitted: true });
       } else {
         // const error = await response.json()
+        alert("Unable to log in");
+      }
+    });
+  }; */
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let url = "http://127.0.0.1:8000/api/login/";
+    let formdata = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    axios.post(url, formdata).then((resp) => {
+      const userData = resp.data;
+      console.log("User data from server", userData);
+
+      //Sotre the details in the local storage
+      if (userData.token) {
+        localStorage.setItem("user", JSON.stringify(userData));
+        this.setState({ IsSubmitted: true });
+      } else {
+        console.log("User not logged in");
         alert("Unable to log in");
       }
     });
