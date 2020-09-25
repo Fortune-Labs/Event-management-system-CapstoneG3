@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default class Events extends Component {
@@ -52,7 +52,7 @@ export default class Events extends Component {
           </div>
           {events.map((event) => (
             <Card
-              className="col-md-3 col-sm-5 col-xs-6"
+              className="col-md-3 col-sm-5 col-xs-6 m-2"
               style={{ width: "200em" }}
             >
               <Card.Body>
