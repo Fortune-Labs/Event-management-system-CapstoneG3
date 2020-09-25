@@ -23,7 +23,7 @@ class Initial extends Component {
   }
   render() {
     if (this.state.shouldRedirect) {
-      return <Redirect to="/" />;
+      return <Redirect to="/register" />;
     }
     return (
       <div className="main-container">
@@ -60,14 +60,14 @@ class Initial extends Component {
                   <h2>V</h2>
                 </div>
                 <div className="details">
-                  <h3>View Booked Event at a Glance</h3>
+                  <h3>View Booked Events at a Glance</h3>
                   <p>
                     You will be able to view and book your event in any category
                     of your choice. There are a wide variety of categories that
                     make your event come alive. Click view details below to
                     begin.
                   </p>
-                  <Link to="/event-book">Book Event</Link>
+                  <Link to="/user">Booked Event</Link>
                 </div>
               </li>
             </ul>
