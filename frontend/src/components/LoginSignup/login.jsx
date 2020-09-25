@@ -2,7 +2,15 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
+<<<<<<< HEAD
 import axios from "axios";
+=======
+<<<<<<< HEAD
+import axios from "axios";
+=======
+// import axios from
+>>>>>>> e9c2b3e8e59540234a9260b064a1839fea63da12
+>>>>>>> 0a84fb1a9a85b845f6ea7ccbfe47b501f3ff725f
 
 class Login extends Component {
   state = {
@@ -18,6 +26,21 @@ class Login extends Component {
     if (change.name === "email") {
       this.setState({ passedEmailIndicator: this.validEmail(change.value) });
     }
+  };
+  handleSubmit1 = async (e) => {
+    e.preventDefault();
+    this.setState({ IsSubmitted: false });
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+
+    const response = await axios.post("http://127.0.0.1:8000/api/login/", user);
+    // set the state of the user
+    // setUser(response.data);
+    // store the user in localStorage
+    localStorage.setItem("user", response.data);
+    console.log(response.data);
   };
 
   /* handleSubmit = async (e) => {
@@ -79,7 +102,7 @@ class Login extends Component {
       <div className="login-wrapper">
         <div className="login-form-wrapper">
           <h1 className="login-header">Login Here</h1>
-          <form className="login-form" onSubmit={this.handleSubmit}>
+          <form className="login-form" onSubmit={this.handleSubmit1}>
             <div className="email">
               <label>Email</label>
               <input

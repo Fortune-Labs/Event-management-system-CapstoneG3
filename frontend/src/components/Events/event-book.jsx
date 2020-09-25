@@ -15,8 +15,8 @@ class Eventbook extends Component {
     this.setState({ HasBooked: false });
     let url = "http://127.0.0.1:8000/event/event-book/";
     let formdata = {
-      user: 21,
-      event: 12,
+      user: this.state.user,
+      event: this.state.event,
       time: this.state.time,
     };
 
@@ -29,6 +29,7 @@ class Eventbook extends Component {
     }).then((response) => {
       if (response.status === 201) {
         console.log("Booked event successfully", response);
+        alert("Successfully booked event");
         this.setState({ HasBooked: true });
       } else {
         alert("Could not book event");
@@ -42,7 +43,7 @@ class Eventbook extends Component {
 
   render() {
     if (this.state.HasBooked) {
-      return <Redirect to="/initial" />;
+      return <Redirect to="/events" />;
     }
     return (
       <div className="event-book-wrapper">
