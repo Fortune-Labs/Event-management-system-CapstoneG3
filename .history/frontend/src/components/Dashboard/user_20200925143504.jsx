@@ -9,7 +9,7 @@ class User extends Component {
     error: null,
   };
   componentDidMount() {
-    fetch("http://127.0.0.1:8000/event/view-events/")
+    fetch("http://127.0.0.1:8000/event/userevents/<pk>/")
       .then((res) => res.json())
       .then(
         (result) => {

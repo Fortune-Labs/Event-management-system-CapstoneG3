@@ -9,7 +9,7 @@ class User extends Component {
     error: null,
   };
   componentDidMount() {
-    fetch("http://127.0.0.1:8000/event/view-events/")
+    fetch("http://127.0.0.1:8000/event/view-bookings/")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -49,14 +49,18 @@ class User extends Component {
             <Link to="initial">Event</Link>
           </div>
           {events.map((event) => (
-            <div class="card col-md-3 col-sm-5 col-xs-6">
-              <div class="card-body">
-                <h3>{event.event}</h3>
-                <p>{event.id}</p>
+            <Card
+              className="col-md-3 col-sm-5 col-xs-6"
+              style={{ width: "200em" }}
+            >
+              <Card.Body>
+                <h3>{event.topic}</h3>
                 <p>{event.time}</p>
-                <p>{event.user}</p>
-              </div>
-            </div>
+                <p>{event.speaker}</p>
+                <p>{event.room_capacity}</p>
+                <p>{event.tagline}</p>
+              </Card.Body>
+            </Card>
           ))}
           {/* <div
             style={{
