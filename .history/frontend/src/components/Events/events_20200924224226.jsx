@@ -39,7 +39,7 @@ export default class Events extends Component {
     } else {
       console.log(events);
       return (
-        <div className="row">
+        <div className="row" style={{ width: "20rem" }}>
           <div className="header-bar">
             {/*   <div className="logo">
             <a>
@@ -51,10 +51,7 @@ export default class Events extends Component {
             <Link to="initial">Event</Link>
           </div>
           {events.map((event) => (
-            <Card
-              className="col-md-3 col-sm-5 col-xs-6"
-              style={{ width: "200rm" }}
-            >
+            <Card className="col-md-3 col-sm-5 col-xs-6 m-2">
               <Card.Body>
                 <h3>{event.topic}</h3>
                 <p>{event.time}</p>

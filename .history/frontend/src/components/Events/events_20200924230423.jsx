@@ -52,8 +52,8 @@ export default class Events extends Component {
           </div>
           {events.map((event) => (
             <Card
-              className="col-md-3 col-sm-5 col-xs-6"
-              style={{ width: "200rm" }}
+              className="col-md-3 col-sm-5 col-xs-6 m-2"
+              style={{ width: "100px" }}
             >
               <Card.Body>
                 <h3>{event.topic}</h3>
