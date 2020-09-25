@@ -1,24 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Initial extends Component {
-  state = {
-    shouldRedirect: false,
-  };
-  componentDidMount() {
-    const user = localStorage.getItem("user");
-    if (user) {
-      const userData = JSON.getItem("user");
-      if (!userData.token) {
-        console.log("Not logged in");
-        this.setState({ shouldRedirect: true });
-      } else {
-        console.log("User is logged in");
-      }
-    } else {
-    }
-  }
   render() {
     return (
       <div className="main-container">

@@ -7,9 +7,8 @@ class Initial extends Component {
     shouldRedirect: false,
   };
   componentDidMount() {
-    const user = localStorage.getItem("user");
     if (user) {
-      const userData = JSON.getItem("user");
+      const user = JSON.getItem("user");
       if (!userData.token) {
         console.log("Not logged in");
         this.setState({ shouldRedirect: true });

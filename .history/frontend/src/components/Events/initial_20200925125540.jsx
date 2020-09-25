@@ -7,7 +7,6 @@ class Initial extends Component {
     shouldRedirect: false,
   };
   componentDidMount() {
-    const user = localStorage.getItem("user");
     if (user) {
       const userData = JSON.getItem("user");
       if (!userData.token) {

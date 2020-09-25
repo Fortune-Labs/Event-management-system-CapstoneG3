@@ -1,24 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Initial extends Component {
-  state = {
-    shouldRedirect: false,
-  };
-  componentDidMount() {
-    const user = localStorage.getItem("user");
-    if (user) {
-      const userData = JSON.getItem("user");
-      if (!userData.token) {
-        console.log("Not logged in");
-        this.setState({ shouldRedirect: true });
-      } else {
-        console.log("User is logged in");
-      }
-    } else {
-    }
-  }
   render() {
     return (
       <div className="main-container">
@@ -27,10 +11,11 @@ class Initial extends Component {
             <div className="content">
               <h1>Events and Shows</h1>
               <p>
+                {" "}
                 Our event management system helps you simplify event planning
                 for all your virtual, hybrid and in-person events. It has the
                 power and flexibility global enterprises need and the
-                scalability that event organizers love.
+                scalability that event organizers love.{" "}
               </p>
             </div>
           </div>
