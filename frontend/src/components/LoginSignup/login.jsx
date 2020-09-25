@@ -2,15 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
-<<<<<<< HEAD
 import axios from "axios";
-=======
-<<<<<<< HEAD
-import axios from "axios";
-=======
-// import axios from
->>>>>>> e9c2b3e8e59540234a9260b064a1839fea63da12
->>>>>>> 0a84fb1a9a85b845f6ea7ccbfe47b501f3ff725f
 
 class Login extends Component {
   state = {
