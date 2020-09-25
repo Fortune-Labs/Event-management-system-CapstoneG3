@@ -19,21 +19,6 @@ class Login extends Component {
       this.setState({ passedEmailIndicator: this.validEmail(change.value) });
     }
   };
-  handleSubmit1 = async (e) => {
-    e.preventDefault();
-    this.setState({ IsSubmitted: false });
-    const user = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-
-    const response = await axios.post("http://127.0.0.1:8000/api/login/", user);
-    // set the state of the user
-    // setUser(response.data);
-    // store the user in localStorage
-    localStorage.setItem("user", response.data);
-    console.log(response.data);
-  };
 
   /* handleSubmit = async (e) => {
     e.preventDefault();
@@ -94,7 +79,7 @@ class Login extends Component {
       <div className="login-wrapper">
         <div className="login-form-wrapper">
           <h1 className="login-header">Login Here</h1>
-          <form className="login-form" onSubmit={this.handleSubmit1}>
+          <form className="login-form" onSubmit={this.handleSubmit}>
             <div className="email">
               <label>Email</label>
               <input

@@ -17,9 +17,13 @@ class Initial extends Component {
         console.log("User is logged in");
       }
     } else {
+      this.setState({ shouldRedirect: true });
     }
   }
   render() {
+    if (this.state.shouldRedirect) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="main-container">
         <div className="section">
