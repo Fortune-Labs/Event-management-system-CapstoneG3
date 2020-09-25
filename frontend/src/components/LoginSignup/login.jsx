@@ -62,6 +62,7 @@ class Login extends Component {
         this.setState({ IsSubmitted: true });
       } else {
         console.log("User not logged in");
+        alert("Unable to log in");
       }
     });
   };
