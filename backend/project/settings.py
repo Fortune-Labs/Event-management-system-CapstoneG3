@@ -26,7 +26,7 @@ SECRET_KEY = '%b!8(2u-@#%bu)gf%$9q@)4!aoi)no-k$5-8+++s1%@34o$xbp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["137.117.35.157", "127.0.0.1", "192.168.56.1"]
+ALLOWED_HOSTS = ["13.72.65.99", "127.0.0.1", "192.168.56.1"]
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'user_account',
-    'djoser',
     'event',
     'knox'
 
@@ -141,7 +140,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '../user_account/build/static'),
+    # os.path.join(BASE_DIR, '../user_account/build/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 

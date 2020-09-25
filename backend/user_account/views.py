@@ -19,7 +19,7 @@ from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 class RegisterView(generics.GenericAPIView):
     serializer_class = RegisterSerializer
-    # permission_classes = (IsAuthenticated)
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request):
         print("request received")
@@ -32,15 +32,18 @@ class RegisterView(generics.GenericAPIView):
 
         return Response(user_data, status=status.HTTP_201_CREATED)
 
+
 class LoginAPIView(KnoxLoginView):
     permission_classes = (permissions.AllowAny,)
+    # permission_classes = [IsAuthenticated]
+
     def post(self, request, format=None):
         serializer = AuthTokenSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         login(request, user)
         return super(LoginAPIView, self).post(request, format=None)
-        
+
 # class LoginAPIView(KnoxLoginView):
 #     serializer_class = LoginSerializer
 #     # permission_classes = [permissions.IsAuthenticated]
@@ -61,11 +64,9 @@ class LoginAPIView(KnoxLoginView):
 #         # login(request, user)
 #         return super(LoginAPIView, self).post(request, format=None)
 
-# class LoginAPIView(generics.GenericAPIView):    
+# class LoginAPIView(generics.GenericAPIView):
 #     serializer_class = LoginSerializer
-#     def post(self, request):        
+#     def post(self, request):
 #         serializer = self.serializer_class(data=request.data)
-#         serializer.is_valid(raise_exception=True)        
+#         serializer.is_valid(raise_exception=True)
 #         return Response(serializer.data, status=status.HTTP_200_OK)
-
-
