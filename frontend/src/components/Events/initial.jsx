@@ -12,6 +12,7 @@ class Initial extends Component {
       const userData = JSON.parse(user);
       if (!userData.token) {
         console.log("Not logged in");
+        alert("Not logged in");
         this.setState({ shouldRedirect: true });
       } else {
         console.log("User is logged in");

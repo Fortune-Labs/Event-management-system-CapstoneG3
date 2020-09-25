@@ -34,10 +34,10 @@ class Home extends Component {
 
           <Link to="/">Home</Link>
           <Link to="initial">Event</Link>
-          {!this.state.IsLoggin ? (
+          {this.state.IsLoggin ? (
             <Link to="Login">Login</Link>
           ) : (
-            <Link to="/">Logout</Link>
+            <Link to="Login">Logout</Link>
           )}
 
           {!this.state.IsLoggin && <Link to="register">SignUp</Link>}
