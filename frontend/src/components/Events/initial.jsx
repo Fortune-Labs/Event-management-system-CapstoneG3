@@ -22,7 +22,7 @@ class Initial extends Component {
   }
   render() {
     if (this.state.shouldRedirect) {
-      return <Redirect to="/" />;
+      return <Redirect to="/register" />;
     }
     return (
       <div className="main-container">
