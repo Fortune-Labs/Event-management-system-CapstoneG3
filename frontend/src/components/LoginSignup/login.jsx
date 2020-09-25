@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
+import axios from "axios";
 
 class Login extends Component {
   state = {
@@ -18,8 +19,23 @@ class Login extends Component {
       this.setState({ passedEmailIndicator: this.validEmail(change.value) });
     }
   };
+  handleSubmit1 = async (e) => {
+    e.preventDefault();
+    this.setState({ IsSubmitted: false });
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+    };
 
-  handleSubmit = async (e) => {
+    const response = await axios.post("http://127.0.0.1:8000/api/login/", user);
+    // set the state of the user
+    // setUser(response.data);
+    // store the user in localStorage
+    localStorage.setItem("user", response.data);
+    console.log(response.data);
+  };
+
+  /* handleSubmit = async (e) => {
     e.preventDefault();
     this.setState({ IsSubmitted: false });
     let url = "http://127.0.0.1:8000/api/login/";
@@ -42,6 +58,27 @@ class Login extends Component {
         alert("Unable to log in");
       }
     });
+  }; */
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let url = "http://127.0.0.1:8000/api/login/";
+    let formdata = {
+      username: this.state.username,
+      password: this.state.password,
+    };
+    axios.post(url, formdata).then((resp) => {
+      const userData = resp.data;
+      console.log("User data from server", userData);
+
+      //Sotre the details in the local storage
+      if (userData.token) {
+        localStorage.setItem("user", JSON.stringify(userData));
+        this.setState({ IsSubmitted: true });
+      } else {
+        console.log("User not logged in");
+      }
+    });
   };
 
   validEmail = (yesEmail) => {
@@ -57,7 +94,7 @@ class Login extends Component {
       <div className="login-wrapper">
         <div className="login-form-wrapper">
           <h1 className="login-header">Login Here</h1>
-          <form className="login-form" onSubmit={this.handleSubmit}>
+          <form className="login-form" onSubmit={this.handleSubmit1}>
             <div className="email">
               <label>Email</label>
               <input
