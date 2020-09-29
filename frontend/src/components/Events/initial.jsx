@@ -52,7 +52,7 @@ class Initial extends Component {
                     management by leveraging the array of tools available in our
                     integrated event software platform.
                   </p>
-                  <Link to="/events">View Events</Link>
+                  <Link to="events">View Events</Link>
                 </div>
               </li>
               <li>

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class Home extends Component {
   state = {
     user: null,
     IsLoggin: false,
+    IsLogout: false,
   };
 
   componentDidMount() {
@@ -21,7 +22,15 @@ class Home extends Component {
       this.setState({ IsLoggin: false });
     }
   }
+  handleLogout = () => {
+    alert("Logged out");
+    localStorage.removeItem("user");
+    this.setState({ IsLogout: true });
+  };
   render() {
+    if (this.state.IsLogout) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="main-wrapper">
         <div className="header-bar">
@@ -34,10 +43,12 @@ class Home extends Component {
 
           <Link to="/">Home</Link>
           <Link to="initial">Event</Link>
-          {this.state.IsLoggin ? (
+          {!this.state.IsLoggin ? (
             <Link to="Login">Login</Link>
           ) : (
-            <Link to="Login">Logout</Link>
+            <Link to="#" onClick={this.handleLogout}>
+              Logout
+            </Link>
           )}
 
           {!this.state.IsLoggin && <Link to="register">SignUp</Link>}

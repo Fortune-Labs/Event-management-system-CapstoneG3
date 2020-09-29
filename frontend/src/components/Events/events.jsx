@@ -1,36 +1,62 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 export default class Events extends Component {
   state = {
     events: [],
     isLoaded: false,
     error: null,
+    IsLoggin: false,
+    IsLogout: false,
   };
 
-  componentDidMount() {
-    fetch("http://127.0.0.1:8000/event/view-events/")
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          console.log("responsee from server", result);
-          this.setState({
-            isLoaded: true,
-            events: result,
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error: error,
-          });
-        }
-      );
+  async componentDidMount() {
+    const user = localStorage.getItem("user");
+    console.log(user);
+    if (user) {
+      const userData = JSON.parse(user);
+      if (!userData.token) {
+        this.setState({ IsLoggin: false });
+      } else {
+        this.setState({ IsLoggin: true });
+        console.log(this.state);
+
+        await fetch("http://127.0.0.1:8000/event/view-events/")
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              console.log("responsee from server", result);
+              this.setState({
+                isLoaded: true,
+                events: result,
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error: error,
+              });
+            }
+          );
+      }
+    } else {
+      this.setState({ IsLoggin: false });
+    }
   }
 
+  handleLogout = () => {
+    alert("Logged out");
+    localStorage.removeItem("user");
+    this.setState({ IsLogout: true });
+  };
+
   render() {
-    const { error, isLoaded, events } = this.state;
+    const { error, isLoaded, IsLoggin, IsLogout, events } = this.state;
+    if (!IsLoggin) {
+      return <Redirect to="/" />;
+    }
+
     if (error) {
       return <div>Error: {error.message}</div>;
     }
@@ -49,6 +75,18 @@ export default class Events extends Component {
           </div> */}
             <Link to="/">Home</Link>
             <Link to="initial">Event</Link>
+
+            <Link to="/">Home</Link>
+            <Link to="initial">Event</Link>
+            {!this.state.IsLoggin ? (
+              <Link to="Login">Login</Link>
+            ) : (
+              <Link to="Login" onClick={this.handleLogout}>
+                Logout
+              </Link>
+            )}
+
+            {!this.state.IsLoggin && <Link to="register">SignUp</Link>}
           </div>
           {events.map((event) => (
             <Card
