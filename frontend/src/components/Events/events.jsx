@@ -9,20 +9,41 @@ export default class Events extends Component {
     error: null,
     IsLoggin: false,
     IsLogout: false,
+    user: {},
+    shouldRedirect: false,
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     const user = localStorage.getItem("user");
-    console.log(user);
+    console.log("user from localstorage", user);
     if (user) {
       const userData = JSON.parse(user);
-      if (!userData.token) {
+      console.log("user data in json ", userData);
+      this.setState({ user: userData });
+
+      // decide to redirect if no user token
+      if (userData.token) {
+        console.log("a token exist, do not redirect");
+      } else {
+        console.log("Kwame, please we are redirecting you.");
+        this.setState({ shouldRedirect: true });
+      }
+    } else {
+      this.setState({ shouldRedirect: true });
+    }
+  }
+
+  checkUserAvailability = () => {
+    const user = this.state.user;
+    if (user) {
+      // const userData = JSON.parse(user);
+      if (!user.token) {
         this.setState({ IsLoggin: false });
       } else {
         this.setState({ IsLoggin: true });
-        console.log(this.state);
+        // console.log(this.state);
 
-        await fetch("http://127.0.0.1:8000/event/view-events/")
+        fetch("http://127.0.0.1:8000/event/view-events/")
           .then((res) => res.json())
           .then(
             (result) => {
@@ -43,26 +64,28 @@ export default class Events extends Component {
     } else {
       this.setState({ IsLoggin: false });
     }
-  }
+  };
 
   handleLogout = () => {
     alert("Logged out");
     localStorage.removeItem("user");
-    this.setState({ IsLogout: true });
+    window.href = "/";
+    // this.setState({ IsLogout: true });
   };
 
   render() {
+    // this.checkUserAvailability();
     const { error, isLoaded, IsLoggin, events } = this.state;
-    if (!IsLoggin) {
+    if (this.shouldRedirectoggin) {
       return <Redirect to="/" />;
     }
 
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    }
-    if (!isLoaded) {
-      return <div>Loading...</div>;
-    }
+    // if (error) {
+    //   return <div>Error: {error.message}</div>;
+    // }
+    // if (!isLoaded) {
+    //   return <div>Loading...</div>;
+    // }
     console.log(events);
     return (
       <div className="row">
@@ -76,12 +99,10 @@ export default class Events extends Component {
           <Link to="/">Home</Link>
           <Link to="initial">Event</Link>
 
-          <Link to="/">Home</Link>
-          <Link to="initial">Event</Link>
           {!this.state.IsLoggin ? (
             <Link to="Login">Login</Link>
           ) : (
-            <Link to="Login" onClick={this.handleLogout}>
+            <Link to="#" onClick={this.handleLogout}>
               Logout
             </Link>
           )}

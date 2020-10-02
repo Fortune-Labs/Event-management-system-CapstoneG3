@@ -25,12 +25,13 @@ class Home extends Component {
   handleLogout = () => {
     alert("Logged out");
     localStorage.removeItem("user");
-    this.setState({ IsLogout: true });
+    window.href = "/";
+    // this.setState({ IsLogout: true });
   };
   render() {
-    if (this.state.IsLogout) {
-      return <Redirect to="/" />;
-    }
+    // if (this.state.IsLogout) {
+    //   return <Redirect to="/" />;
+    // }
     return (
       <div className="main-wrapper">
         <div className="header-bar">
