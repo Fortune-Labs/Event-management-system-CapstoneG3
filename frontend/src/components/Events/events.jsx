@@ -23,7 +23,27 @@ export default class Events extends Component {
 
       // decide to redirect if no user token
       if (userData.token) {
+        this.setState({ IsLoggin: true });
         console.log("a token exist, do not redirect");
+
+        // now fetch data from the backendto populate the events
+        fetch("http://127.0.0.1:8000/event/view-events/")
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              console.log("responsee from server", result);
+              this.setState({
+                isLoaded: true,
+                events: result,
+              });
+            },
+            (error) => {
+              this.setState({
+                isLoaded: true,
+                error: error,
+              });
+            }
+          );
       } else {
         console.log("Kwame, please we are redirecting you.");
         this.setState({ shouldRedirect: true });
@@ -69,16 +89,17 @@ export default class Events extends Component {
   handleLogout = () => {
     alert("Logged out");
     localStorage.removeItem("user");
-    window.href = "/";
-    // this.setState({ IsLogout: true });
+    // window.href = "/";
+    this.setState({ shouldRedirect: true });
   };
 
   render() {
     // this.checkUserAvailability();
     const { error, isLoaded, IsLoggin, events } = this.state;
-    if (this.shouldRedirectoggin) {
+    if (this.state.shouldRedirect) {
       return <Redirect to="/" />;
     }
+    // if (this.s)
 
     // if (error) {
     //   return <div>Error: {error.message}</div>;
@@ -111,6 +132,7 @@ export default class Events extends Component {
         </div>
         {events.map((event) => (
           <Card
+            key={event.id}
             className="col-md-3 col-sm-5 col-xs-6"
             style={{ width: "200em" }}
           >
