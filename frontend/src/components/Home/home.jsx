@@ -7,6 +7,7 @@ class Home extends Component {
     user: null,
     IsLoggin: false,
     IsLogout: false,
+    shouldRedirect: false,
   };
 
   componentDidMount() {
@@ -25,13 +26,13 @@ class Home extends Component {
   handleLogout = () => {
     alert("Logged out");
     localStorage.removeItem("user");
-    window.href = "/";
+    this.setState({ shouldRedirect: true });
     // this.setState({ IsLogout: true });
   };
   render() {
-    // if (this.state.IsLogout) {
-    //   return <Redirect to="/" />;
-    // }
+    if (this.state.shouldRedirect) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="main-wrapper">
         <div className="header-bar">

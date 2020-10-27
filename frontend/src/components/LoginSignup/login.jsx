@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
 
 class Login extends Component {
@@ -61,8 +60,8 @@ class Login extends Component {
         localStorage.setItem("user", JSON.stringify(userData));
         this.setState({ IsSubmitted: true });
       } else {
-        console.log("User not logged in");
         alert("Unable to log in");
+        console.log("User not logged in");
       }
     });
   };
